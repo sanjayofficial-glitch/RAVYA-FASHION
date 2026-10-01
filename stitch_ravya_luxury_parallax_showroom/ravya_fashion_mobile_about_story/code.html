@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#006a60", "on-error-container": "#93000a", "inverse-on-surface": "#eef1ef", "primary": "#00685d", "error": "#ba1a1a", "primary-container": "#008376", "surface-container-high": "#e6e9e7", "surface": "#f7faf8", "on-primary": "#ffffff", "surface-dim": "#d8dbd9", "on-background": "#181c1b", "on-primary-container": "#f4fffb", "secondary-container": "#ffab69", "surface-container-low": "#f1f4f2", "surface-variant": "#e0e3e1", "on-tertiary-fixed": "#3c0700", "tertiary": "#a03b21", "inverse-surface": "#2d3130", "error-container": "#ffdad6", "secondary-fixed-dim": "#ffb780", "surface-container-highest": "#e0e3e1", "secondary": "#8e4e14", "on-error": "#ffffff", "background": "#f7faf8", "primary-fixed-dim": "#6fd8c8", "on-tertiary-container": "#fffbff", "surface-bright": "#f7faf8", "inverse-primary": "#6fd8c8", "on-tertiary-fixed-variant": "#83260e", "on-secondary-fixed-variant": "#6f3800", "tertiary-container": "#c05237", "primary-fixed": "#8cf5e4", "on-primary-fixed": "#00201c", "outline-variant": "#bcc9c6", "surface-container": "#ecefec", "tertiary-fixed": "#ffdad2", "on-surface": "#181c1b", "secondary-fixed": "#ffdcc4", "on-secondary": "#ffffff", "on-surface-variant": "#3d4947", "on-primary-fixed-variant": "#005048", "on-tertiary": "#ffffff", "on-secondary-fixed": "#2f1400", "outline": "#6d7a77", "on-secondary-container": "#783d01", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb4a2" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "gutter": "1.5rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Syne"], "headline-lg-mobile": ["Syne"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Syne"], "display-lg-mobile": ["Syne"], "display-lg": ["Syne"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Syne"], "label-lg": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "800" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">RAVYA</span><div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-full"><span class="material-symbols-outlined text-[12px] text-primary">pin_drop</span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sector 5, Rourkela</span></div></div></div><div class="flex items-center gap-space-xs"><a class="min-h-[44px] px-3 rounded-full bg-primary-container/10 flex items-center gap-1.5 text-primary hover:bg-primary-container/20 transition-colors" href="https://wa.me/" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span class="font-label-sm text-label-sm tracking-wider uppercase font-bold">Concierge</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full px-margin-mobile pb-space-xl gap-y-space-lg">
+<!-- Neo-Editorial Top Badge Matrix -->
+<section class="flex flex-col gap-y-space-sm pt-space-xs">
+<div class="flex items-center justify-between gap-x-2">
+<div class="inline-flex items-center gap-1.5 bg-primary/10 text-primary px-3 py-1 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Editorial Memoir • Vol. 01</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-high px-3 py-1 rounded-full text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">verified_user</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Est. 2019 • Sector 5</span>
+</div>
+</div>
+<!-- Editorial Typography Title Canvas -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col gap-y-space-xs relative overflow-hidden">
+<div class="absolute -right-6 -bottom-6 w-32 h-32 bg-primary/5 rounded-full blur-2xl pointer-events-none"></div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Ravya Chronicle</span>
+<span class="h-px flex-1 bg-surface-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">01 / 03</span>
+</div>
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight uppercase">
+        The Language<br/>
+<span class="text-primary italic font-headline-sm">of</span> Clothing
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Fashion isn't passive garment retail. It's a spoken vernacular of identity, purpose, and cultural momentum right here in the heart of Rourkela.
+      </p>
+<!-- Interactive Neo-Brutalist Sticker Callout -->
+<div class="mt-space-xs flex items-center justify-between bg-secondary-container/20 p-2.5 rounded-full">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-label-sm">
+            #1
+          </div>
+<span class="font-label-md text-label-md text-on-secondary-container">What you wear is who you are</span>
+</div>
+<span class="material-symbols-outlined text-secondary text-[18px] mr-1">north_east</span>
+</div>
+</div>
+</section>
+<!-- Editorial Split Feature Mosaic (Inspired by Layout Grids) -->
+<section class="flex flex-col gap-y-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Visual Memoir</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Lookbook 2025</span>
+</div>
+<!-- Hero Asymmetric Card with Hotspots & Badges -->
+<div class="relative bg-surface-container-lowest rounded-lg overflow-hidden shadow-sm">
+<div class="relative w-full h-80 bg-cover bg-center" data-alt="High-fashion Indian streetwear editorial photo featuring two models in contemporary ochre and deep spruce green structured jackets against minimalist mint textured architectural backdrop, soft studio lighting, sharp silhouettes" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAqJuIanWSUzdzyUqKk9E69dstTyhmIn3F9rpFOk_i2F62OFKT8D6vKDLbyrJAD8xzTQ7aUrPAS3gG9ulV9zw6fq2IsvXhkJaECc9Ssiby41nJnkFSArQztqYQAS0m6B0hQgP-30C5E1fPeFgFRTBWiRhjld_sUnvtSjBL3KIM2OBK39D3SeM25oyzz_6RMdrpA9kyab6uyf1lBPzAIm53k90MUp2gBWQXSEkEXPauSzpR97tMcRqRP')">
+<!-- Floating Glassmorphic Tag -->
+<div class="absolute top-4 left-4 backdrop-blur-md bg-surface-container-lowest/80 text-on-surface px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[14px]">auto_awesome</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide">Culture Meets Clothing</span>
+</div>
+<!-- Floating Metric Capsule inspired by reference layout -->
+<div class="absolute top-4 right-4 bg-primary text-on-primary px-3 py-1.5 rounded-full flex flex-col items-center shadow-md">
+<span class="font-headline-sm text-[16px] leading-tight font-bold">123,45K+</span>
+<span class="font-label-sm text-[9px] uppercase tracking-tighter text-on-primary/80">Styled to date</span>
+</div>
+<!-- Interactive Hotspot Node -->
+<button aria-label="Product Tag" class="absolute bottom-16 right-8 bg-surface-container-lowest/90 text-on-surface w-9 h-9 rounded-full flex items-center justify-center shadow-lg active:scale-95 transition-transform" id="hotspot-trigger">
+<span class="material-symbols-outlined text-[18px] text-primary">add</span>
+</button>
+<!-- Hotspot Detail Bubble -->
+<div class="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/95 backdrop-blur-md p-3 rounded-full flex items-center justify-between shadow-md transition-all duration-300" id="hotspot-card">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[16px]">checkroom</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface truncate">Structured Utility Overshirt</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">₹2,499 • Custom Tailored</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2.5 py-1 rounded-full text-on-surface-variant uppercase shrink-0">In Store</span>
+</div>
+</div>
+<!-- Micro Story Sub-Bar -->
+<div class="p-space-md bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">flare</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Curation curated for Steel City weather &amp; rhythm.</p>
+</div>
+<div class="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[14px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Narrative Capsules 01, 02, 03 -->
+<section class="flex flex-col gap-y-space-md">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">The Three Pillars</span>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold">Chapter Digest</span>
+</div>
+<!-- Capsule 01: Why Ravya -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col gap-y-space-sm relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary font-bold">01</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-bold">The Origin</span>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant">Founded 2019</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Why Ravya Started</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        We opened Ravya Fashion in Sector 5 with one unapologetic premise: Rourkela doesn't need to wait for metro haul deliveries or seasonal trends passed down secondhand. Our industrial township deserves intentional, razor-sharp curation as vibrant as Bandra or Indiranagar.
+      </p>
+<div class="flex flex-wrap gap-2 pt-1">
+<span class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-on-surface">Sector 5 Hub</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-3 py-1 rounded-full text-on-surface">Direct Designer Mills</span>
+</div>
+</div>
+<!-- Capsule 02: Accessible Luxury -->
+<div class="bg-primary p-space-lg rounded-lg shadow-sm text-on-primary flex flex-col gap-y-space-sm relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-primary-fixed font-bold">02</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary-fixed"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed font-bold">Our Philosophy</span>
+</div>
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">diamond</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary">Accessible Luxury</h2>
+<p class="font-body-md text-body-md text-on-primary/90 leading-relaxed">
+        True luxury isn't an arbitrary badge or hyper-inflated markup. Luxury is the tactile drape of 280 GSM cotton, the precise break of structured trousers, reinforced seams, and timeless durability. We remove the middle-layer margin.
+      </p>
+<div class="mt-1 flex items-center justify-between bg-primary-container/40 p-2.5 rounded-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed">check_circle</span>
+<span class="font-label-sm text-label-sm text-on-primary uppercase tracking-wide">Zero Synthetic Fillers</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-bold">100% Cotton &amp; Linens</span>
+</div>
+</div>
+<!-- Capsule 03: Community & Rourkela -->
+<div class="bg-surface-container-lowest p-space-lg rounded-lg shadow-sm flex flex-col gap-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-tertiary font-bold">03</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-tertiary font-bold">Our Community</span>
+</div>
+<div class="flex -space-x-1.5">
+<div class="w-6 h-6 rounded-full bg-surface-container-high flex items-center justify-center font-label-sm text-[9px] text-primary font-bold">NIT</div>
+<div class="w-6 h-6 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-sm text-[9px] font-bold">RSP</div>
+<div class="w-6 h-6 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-sm text-[9px] font-bold">+</div>
+</div>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Built for the Steel City Pulse</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        From NIT Rourkela design minds debating aesthetics between classes, to RSP steel plant leaders upgrading weekend formals, to local music selectors and creators—Ravya is your shared wardrobe.
+      </p>
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary text-[22px]">diversity_3</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface">Community Styling Days</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Every last Sunday of the month in Sector 5</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Visual Manifesto (2-Column Micro Editorial Blocks) -->
+<section class="flex flex-col gap-y-space-sm">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Visual Manifesto</span>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold">Curation Code</span>
+</div>
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Card Left -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col gap-y-2 shadow-sm">
+<div class="relative w-full h-40 rounded-lg overflow-hidden bg-cover bg-center" data-alt="High contrast fashion photography of a contemporary yellow streetwear jacket and monochrome trousers, artistic low angle framing, studio warm amber lighting, editorial styling" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBj1gk5ldBivgxLIzfrqw47GHpi1O641_XNMvxf_m-6aEpo0vfzcIYoUUALszzEslFBKFinMOa3DjDIWQo_eiV039VYRLMlL70PerG3ZaDjAOaa0serhFupUqiPbyy4bVGw0C6Ixe8Q3fELDdSbH5Opi-cDTVyYAmmyo3RFGNTMH_2G1XwpyfA_5J4AC9WU48HMAzhkqLDD41A4H7smorNmRHQ9j8nw4e6iMuZrnJObJSd1zmUXPFRZ')">
+<span class="absolute top-2 left-2 bg-on-background/70 backdrop-blur-sm text-on-primary font-label-sm text-[9px] px-2 py-0.5 rounded-full uppercase">Universal</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Gender-Fluid Cuts</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Drop shoulders, relaxed silhouettes designed for everyone.</p>
+</div>
+<!-- Card Right -->
+<div class="bg-surface-container-lowest rounded-lg p-space-sm flex flex-col gap-y-2 shadow-sm">
+<div class="relative w-full h-40 rounded-lg overflow-hidden bg-cover bg-center" data-alt="Minimalist fashion portrait of female model in structured sage green blazer holding vintage analog camera, soft warm diffused morning lighting, editorial magazine look" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCN8O2DE8ZwbsYXOOg7QROF0WLN48ZoTT7caxPks-D9bDZQBmHUYTOW9Bp_Kyl-bz5hFDoQBRFPZpKI80fBKWbmABbJRGpIkSFIP-Jc3o_4KdMUw5fm_SPHcUD3abE7sUWmnPUodxlcxuWCUIPN2UiflaOQSDUM4mh59v700BP19quPOVWq6pwccfGLRv3Q96kSlLQvnQnOVXZ8M5mZJhyPe0tW0yxC2GSWcKWnhZ_IcAX6e7nOg5KV')">
+<span class="absolute top-2 left-2 bg-primary/80 backdrop-blur-sm text-on-primary font-label-sm text-[9px] px-2 py-0.5 rounded-full uppercase">Conscious</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface truncate">Mindful Runs</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2">Small batch capsules. When an edition sells out, it evolves.</p>
+</div>
+</div>
+</section>
+<!-- Value Proposition Pill Matrix -->
+<section class="flex flex-col gap-y-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider px-1">The Ravya Promise</span>
+<div class="grid grid-cols-1 gap-space-xs">
+<div class="bg-surface-container-low p-space-md rounded-full flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[18px]">straighten</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">Precision Tailoring &amp; Custom Hemming</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary uppercase font-bold pr-2">Complimentary</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-full flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container/40 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-[18px]">verified</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">100% Verified Mill Fabrics</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold pr-2">Zero Dupes</span>
+</div>
+<div class="bg-surface-container-low p-space-md rounded-full flex items-center justify-between shadow-xs">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-[18px]">cached</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface">48-Hour In-Town Exchange Guarantee</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary uppercase font-bold pr-2">Effortless</span>
+</div>
+</div>
+</section>
+<!-- Invitation / Store Visit Card -->
+<section class="relative bg-surface-container-lowest p-space-lg rounded-xl shadow-md overflow-hidden flex flex-col gap-y-space-md">
+<div class="flex flex-col gap-y-1">
+<div class="inline-flex items-center gap-1 text-primary">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold">Physical Flagship Experience</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Feel The Fabric In Person</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+        No digital screen substitutes the tactile weight of pure linen or the instant confidence of the fitting mirror. Drop by our Sector 5 store for an espresso and a personal styling session.
+      </p>
+</div>
+<!-- Store Micro Card -->
+<div class="bg-surface-container-low p-space-md rounded-lg flex items-center justify-between">
+<div class="flex flex-col min-w-0">
+<span class="font-label-md text-label-md text-on-surface">Plot B-14, Commercial Complex</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sector 5, Rourkela, Odisha 769002</span>
+<span class="font-label-sm text-label-sm text-primary font-bold mt-1">Open Today • 10:30 AM - 9:30 PM</span>
+</div>
+<a aria-label="Open in Maps" class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-sm active:scale-95 transition-transform" href="https://maps.google.com" target="_blank">
+<span class="material-symbols-outlined text-[20px]">directions</span>
+</a>
+</div>
+<!-- Action Buttons Group (Neo-Editorial Pills) -->
+<div class="flex flex-col gap-y-space-xs pt-1">
+<a class="w-full h-13 py-3.5 px-6 rounded-full bg-on-background text-surface-container-lowest flex items-center justify-between active:scale-[0.98] transition-all shadow-sm" href="https://wa.me/?text=Hi%20Ravya%20Fashion%2C%20I%20would%20like%20to%20plan%20a%20store%20visit" target="_blank">
+<span class="font-label-lg text-label-lg uppercase tracking-wider font-bold">Plan Your Visit</span>
+<div class="w-7 h-7 rounded-full bg-surface-container-lowest text-on-background flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+</div>
+</a>
+<button class="w-full h-13 py-3.5 px-6 rounded-full bg-surface-container-high text-on-surface flex items-center justify-between active:scale-[0.98] transition-all" id="catalog-btn">
+<span class="font-label-lg text-label-lg uppercase tracking-wider font-bold">Browse In-Store Catalog</span>
+<div class="w-7 h-7 rounded-full bg-primary/20 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[16px]">arrow_outward</span>
+</div>
+</button>
+</div>
+</section>
+</div>
+<script>
+  (function() {
+    const trigger = document.getElementById('hotspot-trigger');
+    const card = document.getElementById('hotspot-card');
+    let visible = true;
+
+    if (trigger && card) {
+      trigger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        visible = !visible;
+        if (visible) {
+          card.style.opacity = '1';
+          card.style.transform = 'translateY(0px)';
+          trigger.querySelector('.material-symbols-outlined').textContent = 'close';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(12px)';
+          trigger.querySelector('.material-symbols-outlined').textContent = 'add';
+        }
+      });
+    }
+
+    const catalogBtn = document.getElementById('catalog-btn');
+    if (catalogBtn) {
+      catalogBtn.addEventListener('click', function() {
+        const catalogNav = document.querySelector('nav a[data-path="catalog"]');
+        if (catalogNav) {
+          catalogNav.click();
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary [&amp;&gt;div]:bg-primary/10 [&amp;&gt;div]:scale-105"><div class="flex justify-between items-center h-20 px-2"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="home" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">home</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="catalog" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">grid_view</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Catalog</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="brands" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">verified</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Brands</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-all text-primary [&amp;&gt;div]:bg-primary/10 [&amp;&gt;div]:scale-105" data-path="story" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Story</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="visit-us" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">store</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Visit Us</span></a></div></nav></body></html>

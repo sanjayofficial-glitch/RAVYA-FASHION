@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary-container': '#c05237', 'outline-variant': '#bcc9c6', 'outline': '#6d7a77', 'on-primary-container': '#f4fffb', 'error': '#ba1a1a', 'on-secondary-fixed-variant': '#6f3800', 'primary-fixed-dim': '#6fd8c8', 'inverse-primary': '#6fd8c8', 'tertiary-fixed': '#ffdad2', 'surface-container': '#ecefec', 'on-tertiary': '#ffffff', 'inverse-surface': '#2d3130', 'surface-bright': '#f7faf8', 'surface-container-lowest': '#ffffff', 'on-primary': '#ffffff', 'primary': '#00685d', 'primary-fixed': '#8cf5e4', 'tertiary-fixed-dim': '#ffb4a2', 'secondary': '#8e4e14', 'on-tertiary-fixed-variant': '#83260e', 'on-secondary': '#ffffff', 'secondary-fixed': '#ffdcc4', 'surface': '#f7faf8', 'surface-container-low': '#f1f4f2', 'surface-container-high': '#e6e9e7', 'secondary-fixed-dim': '#ffb780', 'on-primary-fixed-variant': '#005048', 'surface-dim': '#d8dbd9', 'on-secondary-fixed': '#2f1400', 'on-tertiary-container': '#fffbff', 'surface-variant': '#e0e3e1', 'on-error': '#ffffff', 'surface-container-highest': '#e0e3e1', 'on-primary-fixed': '#00201c', 'primary-container': '#008376', 'on-surface': '#181c1b', 'on-background': '#181c1b', 'surface-tint': '#006a60', 'error-container': '#ffdad6', 'background': '#f7faf8', 'secondary-container': '#ffab69', 'on-tertiary-fixed': '#3c0700', 'on-surface-variant': '#3d4947', 'inverse-on-surface': '#eef1ef', 'on-secondary-container': '#783d01', 'on-error-container': '#93000a', 'tertiary': '#a03b21' }, borderRadius: { 'DEFAULT': '1rem', 'lg': '2rem', 'xl': '3rem', 'full': '9999px' }, spacing: { 'space-xs': '0.25rem', 'gutter': '1.5rem', 'margin': '2rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem', 'gutter-mobile': '1rem', 'margin-mobile': '1rem', 'space-sm': '0.5rem' }, fontFamily: { 'body-sm': ['Plus Jakarta Sans'], 'headline-lg': ['Syne'], 'body-lg': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'label-lg': ['Plus Jakarta Sans'], 'display-lg-mobile': ['Syne'], 'headline-sm': ['Syne'], 'body-md': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'headline-lg-mobile': ['Syne'], 'display-lg': ['Syne'], 'headline-md': ['Syne'] }, fontSize: { 'body-sm': ['13px', { lineHeight: '20px', fontWeight: '400' }], 'headline-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }], 'body-lg': ['18px', { lineHeight: '28px', fontWeight: '500' }], 'label-sm': ['10px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '800' }], 'label-lg': ['14px', { lineHeight: '18px', letterSpacing: '0.02em', fontWeight: '700' }], 'display-lg-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.02em', fontWeight: '800' }], 'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '700' }], 'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.01em', fontWeight: '700' }], 'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.03em', fontWeight: '800' }], 'headline-md': ['28px', { lineHeight: '36px', letterSpacing: '-0.01em', fontWeight: '700' }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">apparel</span></div><a class="flex flex-col" data-path="home" href="#"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">Ravya</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Fashion • Rourkela</span></a></div><nav class="hidden xl:flex items-center p-space-xs bg-surface-container rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-bold shadow-sm"><a aria-current="page" class="px-space-md py-space-xs rounded-full transition-all bg-primary-container text-on-primary-container font-bold shadow-sm" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="shop-catalog" href="#">Shop (Catalog)</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="brand-directory" href="#">Brands</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="about-our-story" href="#">About Our Story</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="visit-store-rourkela" href="#">Visit Store</a></nav><div class="flex items-center gap-space-sm"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span><span class="w-2 h-2 -ml-3 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Open In-Store</span></div><button aria-label="Search catalog" class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-primary transition-all font-label-md text-label-md shadow-sm" href="https://wa.me/919999999999" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp Concierge</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Outer Seafoam Enclosure Frame -->
+<div class="w-full bg-surface-container-low px-2 sm:px-4 md:px-6 lg:px-8 py-6 md:py-10">
+<div class="max-w-7xl mx-auto space-y-8 md:space-y-12">
+<!-- =====================================================================
+           HERO SECTION: Neo-Editorial Split Canvas (Inspired by Reference)
+           ===================================================================== -->
+<section class="w-full bg-surface-container-lowest rounded-xl shadow-[0_20px_50px_rgba(0,104,93,0.06)] p-4 sm:p-6 md:p-8 lg:p-12 relative overflow-hidden">
+<!-- Ambient decorative blobs -->
+<div class="absolute -top-32 -left-20 w-80 h-80 rounded-full bg-primary-fixed-dim/25 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-24 -right-16 w-96 h-96 rounded-full bg-secondary-fixed/40 blur-3xl pointer-events-none"></div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch relative z-10">
+<!-- LEFT COLUMN: Neo-Editorial Narrative & Interactive Capsule -->
+<div class="lg:col-span-6 flex flex-col justify-between space-y-6">
+<div class="space-y-5">
+<!-- Top Badges / Stickers -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm uppercase text-on-surface">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                  Rourkela • Sector 5 Flagship
+                </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[14px]">local_mall</span>
+                  Curated Offline Boutique
+                </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm uppercase">
+                  Verified In Stock
+                </span>
+</div>
+<!-- Main Hero Headline -->
+<div class="space-y-2">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary">Steel City Vanguard Style</span>
+<h1 class="font-display-lg text-display-lg-mobile lg:text-display-lg uppercase text-on-surface leading-[0.95]">
+                  Curated <span class="text-primary">Style</span> For Rourkela
+                </h1>
+</div>
+<!-- Editorial Mini Carousel Triptych (Exact from Reference) -->
+<div class="grid grid-cols-3 gap-2.5 pt-1">
+<div class="group relative rounded-lg overflow-hidden bg-surface-container aspect-[3/4] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="High-fashion young model wearing pastel streetwear with oversized gradient sunglasses and windbreaker in bright sun, teal and salmon mood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHpSnUB9H4pkn3OEG6-GO8_lFnAU0kqLbQNxO6GrE0xUodQyEmsX0I72eM3Kk-RCGwk8tv8CzDnOs_zlvPD5T8Q66NP6Xojgu1PT-xc8hkyDHAPWRE_e-Ev4e0Hj0pnGreXUPswRqQRiArf8oliX09Zvg6EdB4XTs3AZewhNR6pKNCQ2pMIdKdjK51n6MDP21PRU-SMnhX45G0sB_iA5orQ3rw7ac9KfJKN9aZgzCJNT7i5W4nmdBE"/>
+<span class="absolute bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">Casual</span>
+</div>
+<div class="group relative rounded-lg overflow-hidden bg-surface-container aspect-[3/4] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Stylishly tailored male model wearing vibrant patterned camp-collar shirt and tinted aviators with warm amber sunlight in an editorial studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI9Bx38x8gvRwjSm_4DUqmXH4zGYsOIOmxaeJm0f5YrwoLrf31TrRdcvkjdQcyhpOrmbhCHIP6M_gp3WNNXbETmiJ5-62qfYFZnlMlX3DtkkRNo_yeoXBSNI88qtzjIyz_FT0wjigIYnM8QM-UvB3-091qm6S3dF1ZLLuK_EVHAPub7gSkcZloGHf05hZ9eoeCXiWNxSZCEIaRuy58O0lkYB2jfm6S1gUGoPrF-kpMNBIqT1LrKzCO"/>
+<span class="absolute bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">Bright</span>
+</div>
+<div class="group relative rounded-lg overflow-hidden bg-surface-container aspect-[3/4] shadow-sm">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Bold street fashion model wearing high-contrast statement knit polo and avant-garde sunglasses with cinematic sky backdrop" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDijSjo7oFny850fsVjaXwK7HWxGLrGH5o8dgyRD_y-L9WMuz6R72kpBVQgXCiRd2z4kfVteneWHEXA0FKioUxpdc38YU2e43qT9nldeHFq-_FuDXlVuO5_a2ntl_8VPEwZ0GeT3WwLsYpRe8D3LItvtebEyiul_2HI8XlYLSol33uf8kfpl__KERP0zA7XoS0VWr1kEzidftf6r6Eon3kjAeHlQLBnTLBQEZwQRI0m7fmA4qu8PCyG"/>
+<span class="absolute bottom-2 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">Extreme</span>
+</div>
+</div>
+<!-- Subheading -->
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg">
+                What you see online is on our physical racks. Browse curated fits, reserve the piece on WhatsApp, or try it on at our boutique store in Sector 5.
+              </p>
+</div>
+<!-- Interactive Action Cluster -->
+<div class="space-y-4 pt-2">
+<div class="flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-3 px-6 py-3.5 rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-primary transition-all font-label-lg text-label-lg uppercase tracking-wide group shadow-md" href="#new-racks">
+<span>Explore In-Store Catalog</span>
+<div class="w-6 h-6 rounded-full bg-surface-container-lowest text-inverse-surface flex items-center justify-center transition-transform group-hover:translate-x-1 group-hover:-translate-y-0.5">
+<span class="material-symbols-outlined text-[14px]">north_east</span>
+</div>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-all font-label-lg text-label-lg" href="#store-locator">
+<span class="material-symbols-outlined text-[18px] text-primary">near_me</span>
+<span>Get Directions</span>
+</a>
+</div>
+<!-- Typographic Statement Pill (From Reference Image) -->
+<div class="p-3 bg-surface-container-low rounded-lg flex items-center gap-3">
+<div class="w-12 h-6 rounded-full overflow-hidden flex-shrink-0 relative">
+<img class="w-full h-full object-cover" data-alt="Macro close-up portrait of model wearing colorful statement sunglasses with vibrant reflection, editorial styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0cwjyA-WjR_pJJu7rk44g96Vww810yBt1dd06zm_tyxJF6tIvTkWKWoiUzOvn0AYx8fh9dpPOzWrfVHGCgShDi6JV8DfBW7tk1qca06diyDk_L_QSTFxaIK4xydOyDyesigbzmGV_mkySyadH9pNIECaFI5GqF0OjerdbV92nQLfvV3b6mir07N_SW9BrV4fhBQ_ORH4Tn--uexnSokJUVXiRv_RMpZu7f0ZzJqmdU5E41kNnR4Nm"/>
+</div>
+<p class="font-headline-sm text-headline-sm uppercase text-on-surface leading-none text-[15px]">
+                  Uncover the <span class="text-primary italic font-headline-md">power</span> of self-expression via <span class="text-secondary font-headline-md">Ravya</span>
+</p>
+</div>
+<!-- Fast Drop Alert Bar -->
+<div class="bg-surface-container p-1 rounded-full flex items-center max-w-md">
+<span class="material-symbols-outlined text-primary px-3 text-[20px]">mark_email_unread</span>
+<input class="bg-transparent text-body-sm font-body-sm text-on-surface placeholder:text-outline focus:outline-none flex-1 px-1" placeholder="Your WhatsApp / Email for private drops" type="email"/>
+<button class="px-5 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md uppercase tracking-wider hover:bg-primary transition-colors" type="button">Join</button>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: High-Fashion Hero Imagery with Interactive Glass Pins -->
+<div class="lg:col-span-6 relative">
+<div class="relative w-full h-full min-h-[460px] lg:min-h-[580px] rounded-lg overflow-hidden shadow-xl bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="High fashion portrait of stylish young Indian model wearing neon yellow chunky sunglasses, colorful patterned poplin shirt, silk bandana, set against summer sky in Rourkela with editorial cinematic color grade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYEKpqiNXh77MSaRdBDxsOUjMyMYsIgakxeWuByRwvmqGiBt-WVyt0h_98Mp1JYa0XPFs6Cxik9OQXRlO7QxlsjvX-hn65Eu6T3hcCKUEf141OUB2lOZOAOkJ8dUw1k9r09Z18yfRbl9HqBjJTCweA4Z4QveWeSvlsnS5xEOwYKKiMuqUmV4sk9pfvefrXinJg8vEGljUE2zpwHlndj-SKBqRIjvNFqPHJhjqunGl96K7CYXOkEm-D"/>
+<!-- Floating Top Controls Bar (Matching Reference) -->
+<div class="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-auto">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-lowest/60 backdrop-blur-md shadow-sm">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wide text-on-surface">Live In-Store Rack</span>
+</div>
+<div class="flex items-center gap-2">
+<button aria-label="Save to curated list" class="w-9 h-9 rounded-full bg-surface-container-lowest/70 backdrop-blur-md text-on-surface hover:text-primary flex items-center justify-center transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+</button>
+<a class="px-3.5 py-1.5 rounded-full bg-inverse-surface/85 backdrop-blur-md text-inverse-on-surface hover:bg-primary font-label-sm text-label-sm uppercase tracking-wider transition-colors" href="https://wa.me/919999999999?text=Hi%20Ravya,%20I%20want%20to%20reserve%20the%20Hero%20Curated%20Look" target="_blank">
+                    Reserve Look
+                  </a>
+</div>
+</div>
+<!-- Interactive Floating Hotspot Tag #1: Sunglasses -->
+<div class="absolute top-[28%] left-[22%] group cursor-pointer z-20">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-lg transition-transform group-hover:scale-110">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="font-label-md text-label-md text-on-surface font-extrabold">₹1,299</span>
+</div>
+<!-- Hotspot expand tooltip -->
+<div class="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col p-3 rounded-lg bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl w-48 z-30 space-y-1">
+<span class="font-label-sm text-label-sm text-primary uppercase">Acetate Optics</span>
+<p class="font-headline-sm text-headline-sm text-on-surface text-[14px]">Citrus Tint Retro Frames</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">In Stock: 3 pairs left</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold">Tap to hold on WhatsApp →</span>
+</div>
+</div>
+<!-- Interactive Floating Hotspot Tag #2: Poplin Camp Shirt -->
+<div class="absolute bottom-[35%] left-[28%] group cursor-pointer z-20">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-lg transition-transform group-hover:scale-110">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md text-on-surface font-extrabold">₹2,499</span>
+</div>
+<!-- Hotspot expand tooltip -->
+<div class="absolute left-0 top-full mt-2 hidden group-hover:flex flex-col p-3 rounded-lg bg-surface-container-lowest/95 backdrop-blur-xl shadow-xl w-48 z-30 space-y-1">
+<span class="font-label-sm text-label-sm text-secondary uppercase">Signature Linen</span>
+<p class="font-headline-sm text-headline-sm text-on-surface text-[14px]">Pastel Geometric Camp Shirt</p>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Sizes: M, L, XL</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Try in Sector 5 fitting room</span>
+</div>
+</div>
+<!-- Interactive Floating Hotspot Tag #3: Bandana Silk Wrap -->
+<div class="absolute top-[18%] right-[22%] group cursor-pointer z-20">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md shadow-lg transition-transform group-hover:scale-110">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span class="font-label-md text-label-md text-on-surface font-extrabold">₹699</span>
+</div>
+</div>
+<!-- Bottom Metric Sticker Pill Over Image -->
+<div class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+<div class="p-3 rounded-lg bg-surface-container-lowest/85 backdrop-blur-md flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm text-headline-sm">
+                    4.9
+                  </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Store Community</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Over 1,200+ styled in Rourkela</span>
+</div>
+</div>
+<div class="hidden sm:flex items-center gap-1 px-3 py-1.5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>Authenticity Guaranteed</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================================================
+           TICKER RIBBON: Fast Neo-Brutalist Kinetic Strip
+           ===================================================================== -->
+<div class="w-full bg-inverse-surface text-inverse-on-surface rounded-full py-3 px-6 overflow-hidden shadow-inner">
+<div class="flex items-center justify-between gap-6 whitespace-nowrap animate-pulse font-label-md text-label-md uppercase tracking-widest text-primary-fixed">
+<div class="flex items-center gap-4">
+<span>• EVERYDAY VALUE TO PREMIUM CURATION</span>
+<span>• 100% IN-STORE VERIFIED STOCKS</span>
+<span>• AUTHORIZED RETAIL PARTNER</span>
+<span>• SECTOR 5 • ROURKELA • ODISHA</span>
+<span>• WHATSAPP HOLD IN 15 SECONDS</span>
+<span>• EXPERT PERSONAL FIT ASSISTANTS</span>
+</div>
+</div>
+</div>
+<!-- =====================================================================
+           SECTION: SHOP BY MOOD (Editorial Mosaic Grid)
+           ===================================================================== -->
+<section class="space-y-6">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 text-primary font-label-sm text-label-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[16px]">palette</span>
+              Curation Index
+            </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Shop By Aesthetic &amp; Mood</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">
+            Categorized not just by garment types, but by where you are heading. From chilled Sunday mornings to high-energy evening parties.
+          </p>
+</div>
+<!-- 6-Mood Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+<!-- Card 1: Casual Sunday & Street -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Young man in relaxed beige oversized cotton t-shirt with neutral relaxed denim in minimalist sunny studio, high key modern fashion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDy0hhi-HFfT7TDRsd4q1_AihpzHp_oo_dzvDdC6Dprzj89XjWmYDdwZsbX8mYV_5ClH3LVzA3AhjCyUaQciRpEFWa-nOWjm821NBZ7Y996ROSyAiM0mDqfsFCOsepJEAQ6LCc1sM2kTkeeRQT41EZ0O5_HjLkFvtY8Dy9LaYC2Gon7BZCAQWEs5KQoSKMrlQAvecwYBDY9-0xToGOlVuSeos0MfRIV15LUdZR-6EKsEXziMv_bWxol"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">01 • Easy Drapes</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">120+ Pieces</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Casual Street</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">Boxy tees, waffle polos, parachute pants, and everyday relaxed utility.</p>
+</div>
+</a>
+<!-- Card 2: Executive & Formal Edge -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Chic business casual Indian professional wearing crisp structured mint tailored blazer and neutral shirt, clean architectural background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAP0OThW9d3IMoIXHupSqRQgcsSF8xb58IVfXiWU-jVgrte2mTzqjN_S7R3H_MrU-KkZWsdhfPyP5NbUoe0i1sjiwSJv8gWSmindMwa5Ej506KVaB3sEFO1xuoB3tA69zXSCmkz1LQYbWvbygEI8ffvE2AlKfp8tr4yrmNJOYyqtx_P_xm_vobOWCqdJDcdc3B_rBFf4gzuagdaYpZwy8Co_uAcpEHpCfgrIWcT9CcldAIO9iKAK_Q"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">02 • Tailored</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">85+ Pieces</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Formal Sharp</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">Wrinkle-free executive shirts, tailored trousers, and soft unstructured blazers.</p>
+</div>
+</a>
+<!-- Card 3: Party & Festival Expressive -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Expressive party fashion with model wearing metallic accent bomber jacket, neon highlights and warm night ambience" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFAC00nZB5L96QyPAgp18V3ZEGn84DWUR4S4iNRDH4ZMQhM3IRKFIv5PoUuIjE7xjQZ0UrjFJkCXqMfG-eTpq42NsBnmFtCtFNqlQNuUFO3yegUIEcFWrTwrCtfBaCJSh21MIgesJrBWufB18NYTSHhAhcN9DnGqhz4c96AqHgi4_uqjT6UGudZ_YmO9RNHlc7Kbnh4MWmJweOuZyrsCJ-bGCTWWXbWFUw9LS73HeBMLU40lkJy2c_"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">03 • Electric</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed tracking-wider">64+ Pieces</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Party &amp; Club</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">Lustrous rayon cuban collars, graphic statements, and moody layering.</p>
+</div>
+</a>
+<!-- Card 4: Denim Heavy & Heritage -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="High contrast shot of vintage wash indigo denim jacket and raw hem jeans worn by stylish model in sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpDvv4NmIiRWlGqzyHxatid2-hqtWx-5glKWh_TAfZHjzPgqThi7UM5baJgnDeHyKbXhXg4Iihy4R_2hISptlZxzCQCsq1IKMCMKyXBhuBLZ0Q8gelYT-lz5vqFVUcUH5bSDObMEjGF9_6bvhVUllZ0ZqKuhY6k9nrRHYUZwXmfkkFUYkWawgR6mITZhx62xjRsyFln5APIMFuxCb42fDY_Uf5gqxfM3SsYGUfDW1ozvOdnkLp3xl2"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">04 • Indigo</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">Killer • Unibro</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Denim Vault</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">Heavyweight selvedge, bootcut revivals, carpenter denim, and jacket fits.</p>
+</div>
+</a>
+<!-- Card 5: Athleisure & Active Motion -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Athletic young runner wearing stylish breathable seafoam teal running apparel and jogger shorts against modern concrete park" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPqFkB5R6xTMlEskmyPL-CPM337St2t4ANFYqP1VcqU3wAwT_qjOX61oKtRXnWoE2pkxIJDIiyaL1iwGGiv1w9vbkmBIEwTujsITCFLD9n3Lf4cHOy7QlP_y8oNvPxCsmqLal04dknZk6Nnj4TZHkKb61P9K_3yfyexAvAedvwC5GlQpeMrggXfoRLG7CJad-3lyU48bRHD_Y7hlZNTamoCqg_bU_nBHltxWZiPF5gPF4m_q_KP-Y8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">05 • Motion</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-primary-fixed-dim tracking-wider">Sportiq • Jockey</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Active Motion</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">Quick-dry tracks, compression tees, breathable shorts, and gym-ready layers.</p>
+</div>
+</a>
+<!-- Card 6: Pure Heritage Cotton -->
+<a class="group relative rounded-xl overflow-hidden bg-surface-container-lowest p-6 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between min-h-[320px]" href="#">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Traditional refined Indian handloom cotton kurta and white dhotis worn with modern confidence in sunny courtyard with warm earthy textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYfTONsmhYmY_mMfzfZt8Po5sW35q3TZ_Q_Pc6059JL93_Go3C7HVItoZyirfV_no4vhbV0jHxGnZd0XBa3RWWfyvH-U-5ZUxRf-c0f_anlIOYDdR8kWXddjnWSFb9TE-vgju3ZKNdcYZjO8VOIIPdrgIoz6ragbM-FZmRPqGWuSom_w5Vx09Pvz60HoCYqEY58a-8BA2i_ltIl2kaU6HyqQRTqCSZ-lseQZzLUFVz53R0NE2JrP06"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-inverse-surface/20 to-transparent"></div>
+</div>
+<div class="relative z-10 flex items-center justify-between">
+<span class="px-3 py-1 rounded-full bg-surface-container-lowest/80 backdrop-blur-md font-label-sm text-label-sm uppercase text-on-surface">06 • Timeless</span>
+<div class="w-8 h-8 rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</div>
+</div>
+<div class="relative z-10 space-y-1 text-on-primary">
+<span class="font-label-sm text-label-sm uppercase text-secondary-fixed tracking-wider">Ramraj Dhotis &amp; Kurtas</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-primary">Heritage Pure</h3>
+<p class="font-body-sm text-body-sm text-surface-container-low line-clamp-2">100% combed cotton festive dhotis, matching shirts, and celebration ensembles.</p>
+</div>
+</a>
+</div>
+</section>
+<!-- =====================================================================
+           SECTION: NEW IN-STORE RACKS (Interactive Product Cards with WhatsApp Hold)
+           ===================================================================== -->
+<section class="space-y-6 pt-4" id="new-racks">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm uppercase">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+              Fresh Arrivals • Updated Yesterday
+            </div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">New In-Store Racks</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-4 py-2 rounded-full bg-inverse-surface text-inverse-on-surface font-label-md text-label-md">All Drops</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Shirts</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Jeans</button>
+<button class="px-4 py-2 rounded-full bg-surface-container text-on-surface-variant hover:text-on-surface font-label-md text-label-md">Athleisure</button>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Product Item 1 -->
+<div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Model posing in contemporary textured sage teal utility overshirt with zip pockets in soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaIVip00kpWyRZAdzpfo4J0CSWr3kWF9h8sumaRnuij94gqwbpN_v3sfoyoS5EQZjoL6a4JBQgWSjoPxGdHlFez0XMfgTYnYi7EFfPN8Zgsk4xKZ3o3-jLaH3rr-3zjqOpkebewVSZ_gIo-TtoPAH4x0qsGzc7K6K5X2h0latq8Rwcf_UFasrBiGFZyePRfdTUAwIH73Jb_oTd8Bd4aMuzEW6vhaWcvzuBrhYPzc4N2t4N9C9iTxoA"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm uppercase font-bold text-on-surface">Killer Denim</span>
+</div>
+<button aria-label="Favorite item" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-surface-container-lowest/80 text-on-surface hover:text-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center justify-between">
+<span>Rack: Sector 5 Floor 1</span>
+<span class="text-primary-fixed">4 in stock</span>
+</div>
+</div>
+<div class="space-y-2 px-1 pb-1">
+<div class="flex items-baseline justify-between">
+<h4 class="font-headline-sm text-headline-sm text-[17px] text-on-surface truncate">Tactical Zip Overshirt</h4>
+<span class="font-headline-sm text-headline-sm text-primary text-[18px]">₹2,199</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sizes: 38, 40, 42, 44 • Heavy Twill</p>
+<a class="w-full py-2.5 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" href="https://wa.me/919999999999?text=Hi%20Ravya,%20hold%20the%20Tactical%20Zip%20Overshirt%20(₹2,199)%20for%20me%20at%20Sector%205" target="_blank">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Hold on WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Product Item 2 -->
+<div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Studio product model wearing premium Ramraj ivory gold-bordered wedding dhoti and silk blend kurta combo with elegant posture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsyrmksKzwZjvPUUhdwpXTvHKKFzVvB2bi03Kr_q4TTgh2u2JMTvYai2Yb5aGkS29Ou6S4gTuq7d5rP268A-qHVa4fTZJY_QhE_W2637KvypH6GMUQJ4VAlLyZ_k-PrCPRr-Qi9QgsohfGh3kVfsgu_iJcs-sJss0y0fdfbwZI9QKKC4igXtVAC2WOO-88beQ7_7kEQ5u-c9zEvh4jFGrW2OnHXbX4VDoyPpV0GVLqycQG6Mdd0Es6"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm uppercase font-bold text-on-surface">Ramraj Cotton</span>
+</div>
+<button aria-label="Favorite item" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-surface-container-lowest/80 text-on-surface hover:text-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center justify-between">
+<span>Traditional Counter</span>
+<span class="text-secondary-fixed">Festive Ready</span>
+</div>
+</div>
+<div class="space-y-2 px-1 pb-1">
+<div class="flex items-baseline justify-between">
+<h4 class="font-headline-sm text-headline-sm text-[17px] text-on-surface truncate">Kasavu Heritage Kurta Set</h4>
+<span class="font-headline-sm text-headline-sm text-primary text-[18px]">₹1,849</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Combed Pure Cotton • Gold Zari</p>
+<a class="w-full py-2.5 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" href="https://wa.me/919999999999?text=Hi%20Ravya,%20hold%20the%20Kasavu%20Heritage%20Kurta%20Set%20(₹1,849)%20for%20me" target="_blank">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Hold on WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Product Item 3 -->
+<div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Model in Sportiq seamless training joggers with reflective accents and technical mesh ventilation panels" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXVvL4WH7S6iQuI4PakBhQFaWYVG8JDvG8vHJGKoNmJp5QY68f8o9Qjhdms-jKqPIp27ohllLnuDm9_zfwgPv0KCINcKCN9vN4LG713GNjjSlPsvS4XMNpmyTQotoMRQhWsxuYe0z7QJSPJ-LTCsqN0-EmTlHuQKpe2NbxvG3u8dvjMm0ByuIYD95W0YFXd_oWa5F36r3ftTJwgxdPP4NrHruuGzvj6wm3pR3q0D1EcLxTjMzoFaZE"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm uppercase font-bold text-on-surface">Sportiq Active</span>
+</div>
+<button aria-label="Favorite item" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-surface-container-lowest/80 text-on-surface hover:text-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center justify-between">
+<span>Athletic Wing</span>
+<span class="text-primary-fixed">Last 2 Units</span>
+</div>
+</div>
+<div class="space-y-2 px-1 pb-1">
+<div class="flex items-baseline justify-between">
+<h4 class="font-headline-sm text-headline-sm text-[17px] text-on-surface truncate">Flexi-Stride Aero Track</h4>
+<span class="font-headline-sm text-headline-sm text-primary text-[18px]">₹1,499</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sizes: 30, 32, 34, 36 • 4-Way Stretch</p>
+<a class="w-full py-2.5 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" href="https://wa.me/919999999999?text=Hi%20Ravya,%20hold%20the%20Flexi-Stride%20Aero%20Track%20(₹1,499)%20for%20me" target="_blank">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Hold on WhatsApp</span>
+</a>
+</div>
+</div>
+<!-- Product Item 4 -->
+<div class="group bg-surface-container-lowest rounded-xl p-3 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+<div class="relative w-full aspect-[4/5] rounded-lg overflow-hidden bg-surface-container-low mb-3">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Model wearing relaxed-fit vintage washed carpenter denim jeans paired with white sneakers on clean studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOlvPVPSFhDoKjzIkPU5AhV-4fqDnK8wRF3zVCvb4QUm3Dk0dFWYE2YQnRUoYJlAju4nF-aRPjYkus5TqucbAIe3gyEh1-nanhVQQskncJthQpZ8zyOWbHrxrMzogPGkYMDsqG00FllONIilnGPZlIoST6y-WvBQ-8MPAga8xHDYtPNcsV_eYZpsNXagAfddXkTUPWuFPOgDnV0kHQGdaBJt4YeZg1w3n_LYgQiPX-k4mY61swCSId"/>
+<div class="absolute top-2.5 left-2.5">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md font-label-sm text-label-sm uppercase font-bold text-on-surface">Unibro Denim</span>
+</div>
+<button aria-label="Favorite item" class="absolute top-2.5 right-2.5 w-8 h-8 rounded-full bg-surface-container-lowest/80 text-on-surface hover:text-secondary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[16px]">favorite</span>
+</button>
+<div class="absolute bottom-2.5 left-2.5 right-2.5 px-3 py-1.5 rounded-full bg-inverse-surface/80 backdrop-blur-md text-inverse-on-surface font-label-sm text-label-sm flex items-center justify-between">
+<span>Denim Vault</span>
+<span class="text-secondary-fixed">Trending</span>
+</div>
+</div>
+<div class="space-y-2 px-1 pb-1">
+<div class="flex items-baseline justify-between">
+<h4 class="font-headline-sm text-headline-sm text-[17px] text-on-surface truncate">90s Carpenter Rigid Wash</h4>
+<span class="font-headline-sm text-headline-sm text-primary text-[18px]">₹2,699</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">13.5 oz Raw Cotton • Straight Leg</p>
+<a class="w-full py-2.5 rounded-full bg-surface-container hover:bg-primary hover:text-on-primary text-on-surface font-label-md text-label-md uppercase tracking-wider flex items-center justify-center gap-1.5 transition-colors" href="https://wa.me/919999999999?text=Hi%20Ravya,%20hold%20the%2090s%20Carpenter%20Rigid%20Wash%20(₹2,699)%20for%20me" target="_blank">
+<span class="material-symbols-outlined text-[16px]">bookmark</span>
+<span>Hold on WhatsApp</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- =====================================================================
+           SECTION: AUTHORIZED BRAND HUBS (Neo-Editorial Badges & Trust Grid)
+           ===================================================================== -->
+<section class="bg-surface-container-lowest rounded-xl p-6 sm:p-8 lg:p-10 shadow-sm space-y-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Direct Mill &amp; Brand Partnership</span>
+<h3 class="font-headline-md text-headline-md uppercase text-on-surface">The Brands We Bring To Sector 5</h3>
+</div>
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container font-label-md text-label-md text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>100% Genuine Authorized Stocks • Full Barcode Warranties</span>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+<!-- Brand 1: Killer -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-secondary">K</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Killer</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Denim • Street</span>
+</div>
+<!-- Brand 2: Ramraj -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-primary">R</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Ramraj</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Pure Handloom</span>
+</div>
+<!-- Brand 3: Sportiq -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-secondary">S</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Sportiq</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Athletic Pro</span>
+</div>
+<!-- Brand 4: Ignite -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-primary">I</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Ignite</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Graphic Street</span>
+</div>
+<!-- Brand 5: Jockey -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-secondary">J</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Jockey</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Lounge • Basics</span>
+</div>
+<!-- Brand 6: Unibro -->
+<div class="p-4 rounded-lg bg-surface-container-low hover:bg-surface-container transition-all flex flex-col items-center justify-center text-center space-y-2 group">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+<span class="font-headline-sm text-headline-sm text-primary">U</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-[16px] text-on-surface">Unibro</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Everyday Cargo</span>
+</div>
+</div>
+</section>
+<!-- =====================================================================
+           SECTION: THE OFFLINE STORE EXPERIENCE & LOCATION
+           ===================================================================== -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch" id="store-locator">
+<!-- Experience narrative card -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-6 sm:p-8 lg:p-10 shadow-sm flex flex-col justify-between space-y-6">
+<div class="space-y-4">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase">
+<span class="material-symbols-outlined text-[16px]">storefront</span>
+<span>Try In Person Before You Buy</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface leading-tight">
+              Why Rourkela Chooses <span class="text-primary">Ravya In-Store</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              No guessing sizes. No returns hassle. Walk in, experience hand-selected fabrics, try fits in air-conditioned comfort, or have our personal stylists assemble complete outfits for weddings, interviews, and celebrations.
+            </p>
+<!-- 3 Highlights -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+<div class="p-4 rounded-lg bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-primary text-[22px]">checkroom</span>
+<h4 class="font-headline-sm text-headline-sm text-[15px] text-on-surface">Spacious Trial</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Private luxury trial suites with 360° mirrored views.</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-secondary text-[22px]">content_cut</span>
+<h4 class="font-headline-sm text-headline-sm text-[15px] text-on-surface">Fast Alteration</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Free same-day length adjustments on all denim and trousers.</p>
+</div>
+<div class="p-4 rounded-lg bg-surface-container-low space-y-1">
+<span class="material-symbols-outlined text-primary text-[22px]">quick_reference</span>
+<h4 class="font-headline-sm text-headline-sm text-[15px] text-on-surface">15-Min Reserve</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">WhatsApp any piece; we hold it behind the counter for 48 hours.</p>
+</div>
+</div>
+</div>
+<!-- Bottom CTA bar -->
+<div class="pt-4 flex flex-wrap items-center gap-3">
+<a class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-colors shadow-md" href="https://maps.google.com/?q=Sector+5+Rourkela+Odisha" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Open in Google Maps</span>
+</a>
+<a class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md transition-colors" href="tel:+919999999999">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Store Desk</span>
+</a>
+</div>
+</div>
+<!-- Store Map & Timings Mini Bento -->
+<div class="lg:col-span-5 flex flex-col gap-6">
+<!-- Storefront visual preview with map pin -->
+<div class="relative w-full h-64 rounded-xl overflow-hidden shadow-sm bg-surface-container">
+<div class="w-full h-full bg-cover bg-center" data-alt="Boutique storefront exterior of Ravya Fashion in Rourkela Odisha, warm architectural wood and glass facade with shoppers in daylight" data-location="Sector 5, Rourkela, Odisha" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSckkMkPhkQGSLJrFlocoYoc9Fs46mrJ-xjkYOMNmBPuMWf89ModSR44VVVZ2AH13LRHbYyeRUjdyg0mfdWG8Y0fVfja7qW5-d05_MiVgFwWrUjM9Ingy8CqhbteA_QgJ9pZ4yCxZ0Fjp8xtfJUvHu4Fs6yjB6II3p2wDsTqys9D8Nm0wiA-o7WIGaXH_DYixydKpTzHeL4-oBjMa1RDDGfmajEEz5ldhknk5H2aLB6J5z25DRfypw')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-transparent to-transparent flex flex-col justify-end p-5 text-inverse-on-surface">
+<span class="font-label-sm text-label-sm uppercase text-primary-fixed tracking-wider">Sector 5 Commercial Core</span>
+<p class="font-headline-sm text-headline-sm text-inverse-on-surface">Opposite Daily Market • Main Road</p>
+<span class="font-body-sm text-body-sm text-surface-container-high">Ample 2-wheeler and 4-wheeler parking space</span>
+</div>
+</div>
+<!-- Timings & Live Counter Capsule -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex items-center justify-between gap-4">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Currently Open</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface">10:00 AM – 09:30 PM</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Monday through Sunday • All 7 Days</p>
+</div>
+<div class="w-14 h-14 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">schedule</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl py-space-xl px-gutter"><div class="max-w-7xl mx-auto space-y-space-xl"><div class="p-space-xl bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] relative overflow-hidden"><div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg"><div class="max-w-2xl space-y-space-sm"><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase"><span class="material-symbols-outlined text-[14px]">verified</span><span>Editorial Curation • Steel City</span></div><h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">The Language of Clothing / RAVYA</h2><p class="font-body-md text-body-md text-on-surface-variant">Elevating daily wardrobes in Rourkela, Odisha with original high-street styles, heritage classics, and contemporary tailoring.</p></div><div class="w-full lg:w-auto"><form class="flex items-center bg-surface-container-low p-space-xs rounded-full max-w-md" onsubmit="event.preventDefault();"><input class="bg-transparent px-space-md py-space-xs text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none flex-1" placeholder="Enter email for lookbook drops..." required="" type="email"/><button class="px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" type="submit">Subscribe</button></form></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg"><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Authorized Brand Hub</span><div class="flex flex-wrap gap-space-xs pt-space-xs"><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Killer</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Ramraj</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Sportiq</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Ignite</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Jockey</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Unibro</span></div></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Store Timings</span><p class="font-body-md text-body-md text-on-surface">Monday – Sunday<br/><span class="font-label-lg text-label-lg text-on-surface-variant">10:00 AM – 09:30 PM</span></p><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">storefront</span><span>Open 7 Days a Week</span></div></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Rourkela Flagship</span><p class="font-body-md text-body-md text-on-surface">Main Road, Near Daily Market,<br/>Rourkela, Sundargarh, Odisha – 769001</p><a class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md hover:underline" data-path="visit-store-rourkela" href="#"><span class="material-symbols-outlined text-[16px]">map</span><span>Get Directions</span></a></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Personal Stylist Desk</span><p class="font-body-md text-body-md text-on-surface">Need quick sizing, outfit pairings, or wedding trousseau reserve?</p><div class="pt-space-xs"><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="https://wa.me/919999999999" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[18px]">support_agent</span><span>Talk with Stylist</span></a></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RAVYA FASHION. All Rights Reserved. Crafted for Odisha's new vanguard.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Store Locator</a></div></div></div></footer></body></html>

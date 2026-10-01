@@ -1,0 +1,35 @@
+{
+  "name": "ravya-fashion",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack -p 3000",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "next lint --max-warnings 0",
+    "budget": "node scripts/check-budget.mjs",
+    "images": "node scripts/prepare-images.mjs",
+    "verify": "pnpm typecheck && pnpm lint && pnpm budget",
+    "postbuild": "node scripts/check-budget.mjs",
+    "dev:restart": "node scripts/dev-restart.mjs"
+  },
+  "dependencies": {
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.3.7",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.37.0",
+    "eslint-config-next": "15.5.4",
+    "postcss": "^8.5.6",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
+  }
+}

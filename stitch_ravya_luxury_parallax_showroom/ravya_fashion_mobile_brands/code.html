@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#006a60", "on-error-container": "#93000a", "inverse-on-surface": "#eef1ef", "primary": "#00685d", "error": "#ba1a1a", "primary-container": "#008376", "surface-container-high": "#e6e9e7", "surface": "#f7faf8", "on-primary": "#ffffff", "surface-dim": "#d8dbd9", "on-background": "#181c1b", "on-primary-container": "#f4fffb", "secondary-container": "#ffab69", "surface-container-low": "#f1f4f2", "surface-variant": "#e0e3e1", "on-tertiary-fixed": "#3c0700", "tertiary": "#a03b21", "inverse-surface": "#2d3130", "error-container": "#ffdad6", "secondary-fixed-dim": "#ffb780", "surface-container-highest": "#e0e3e1", "secondary": "#8e4e14", "on-error": "#ffffff", "background": "#f7faf8", "primary-fixed-dim": "#6fd8c8", "on-tertiary-container": "#fffbff", "surface-bright": "#f7faf8", "inverse-primary": "#6fd8c8", "on-tertiary-fixed-variant": "#83260e", "on-secondary-fixed-variant": "#6f3800", "tertiary-container": "#c05237", "primary-fixed": "#8cf5e4", "on-primary-fixed": "#00201c", "outline-variant": "#bcc9c6", "surface-container": "#ecefec", "tertiary-fixed": "#ffdad2", "on-surface": "#181c1b", "secondary-fixed": "#ffdcc4", "on-secondary": "#ffffff", "on-surface-variant": "#3d4947", "on-primary-fixed-variant": "#005048", "on-tertiary": "#ffffff", "on-secondary-fixed": "#2f1400", "outline": "#6d7a77", "on-secondary-container": "#783d01", "surface-container-lowest": "#ffffff", "tertiary-fixed-dim": "#ffb4a2" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-lg": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "margin": "2rem", "space-sm": "0.5rem", "gutter-mobile": "1rem", "space-xl": "2.5rem", "space-xs": "0.25rem", "gutter": "1.5rem" }, fontFamily: { "label-sm": ["Plus Jakarta Sans"], "headline-sm": ["Syne"], "headline-lg-mobile": ["Syne"], "body-sm": ["Plus Jakarta Sans"], "headline-lg": ["Syne"], "display-lg-mobile": ["Syne"], "display-lg": ["Syne"], "body-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-md": ["Syne"], "label-lg": ["Plus Jakarta Sans"] }, fontSize: { "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.08em", "fontWeight": "800" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-sm": ["13px", { "lineHeight": "20px", "fontWeight": "400" }], "headline-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "display-lg-mobile": ["36px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-lg": ["56px", { "lineHeight": "64px", "letterSpacing": "-0.03em", "fontWeight": "800" }], "body-md": ["15px", { "lineHeight": "24px", "fontWeight": "400" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.04em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }], "headline-md": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "label-lg": ["14px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "700" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-xs"><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">RAVYA</span><div class="flex items-center gap-1 bg-surface-container px-2 py-0.5 rounded-full"><span class="material-symbols-outlined text-[12px] text-primary">pin_drop</span><span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sector 5, Rourkela</span></div></div></div><div class="flex items-center gap-space-xs"><a class="min-h-[44px] px-3 rounded-full bg-primary-container/10 flex items-center gap-1.5 text-primary hover:bg-primary-container/20 transition-colors" href="https://wa.me/" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span class="font-label-sm text-label-sm tracking-wider uppercase font-bold">Concierge</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 ml-1"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex flex-col relative w-full pt-16 pb-28 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Mint Frame Canvas Surround (Inspiration style: Neo-Editorial Frame) -->
+<div class="px-margin-mobile pt-space-md pb-space-xl flex flex-col gap-space-lg">
+<!-- Editorial Intro & Manifesto Block -->
+<div class="bg-surface-container-lowest rounded-lg p-space-lg shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<!-- Decorative Mint/Teal Floating Sticker Pill -->
+<div class="flex items-center justify-between gap-2">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm tracking-wider uppercase">
+          Sector 5 • Official Storehouse
+        </span>
+<span class="bg-secondary-container text-on-secondary-container px-2.5 py-0.5 rounded-full font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+          Authentic
+        </span>
+</div>
+<div class="flex flex-col gap-space-xs mt-1">
+<h1 class="font-display-lg-mobile text-display-lg-mobile tracking-tighter uppercase text-on-surface leading-[0.95]">
+          OUR<br/>BRANDS
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-snug">
+          Six authentic fashion titans under one glasshouse in Sector 5, Rourkela. Zero replicas, sealed warranties.
+        </p>
+</div>
+<!-- Neo-Editorial Metrics Sticker Chips (Inspiration callouts: 123.45K+ metric badge look) -->
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div class="bg-primary text-on-primary p-3 rounded-DEFAULT flex flex-col justify-between shadow-sm">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">verified_user</span>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm leading-none block">100%</span>
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider block mt-0.5">Genuine Invoices</span>
+</div>
+</div>
+<div class="bg-secondary text-on-secondary p-3 rounded-DEFAULT flex flex-col justify-between shadow-sm">
+<span class="material-symbols-outlined text-secondary-fixed text-[20px]">layers</span>
+<div class="mt-2">
+<span class="font-headline-sm text-headline-sm leading-none block">6 Pillars</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed uppercase tracking-wider block mt-0.5">Street to Heritage</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Category Filter Horizontal Scroll -->
+<div class="flex flex-col gap-2">
+<div class="flex items-center justify-between px-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Curated Pillars</span>
+<span class="font-label-sm text-label-sm text-primary">6 Houses</span>
+</div>
+<div class="flex gap-2 overflow-x-auto pb-1 -mx-margin-mobile px-margin-mobile no-scrollbar" id="brand-filters">
+<button class="filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider bg-on-surface text-surface-container-lowest transition-all" data-filter="all">
+          All Labels (6)
+        </button>
+<button class="filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface-variant transition-all" data-filter="denim">
+          Denim &amp; Street
+        </button>
+<button class="filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface-variant transition-all" data-filter="heritage">
+          Pure Cotton &amp; Dhotis
+        </button>
+<button class="filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface-variant transition-all" data-filter="athletic">
+          Active Athletics
+        </button>
+<button class="filter-btn shrink-0 px-4 py-2 rounded-full font-label-md text-label-md uppercase tracking-wider bg-surface-container-high text-on-surface-variant transition-all" data-filter="intimates">
+          Daily Intimates
+        </button>
+</div>
+</div>
+<!-- BRAND FEED (6 Houses in Neo-Editorial Asymmetrical Card Layout) -->
+<div class="flex flex-col gap-space-lg" id="brand-cards-container">
+<!-- BRAND 1: KILLER JEANS -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="denim">
+<!-- Card Header Info -->
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 01</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bengaluru</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              KILLER JEANS
+            </h2>
+<p class="font-label-md text-label-md text-primary mt-1 font-bold">Denim-First Street Attitude</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">dry_cleaning</span>
+</span>
+</div>
+<!-- Asymmetric Photography Stage with Editorial Sticker Callouts -->
+<div class="relative w-full h-72 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Raw dynamic fashion editorial of young stylish model wearing distressed indigo raw-selvedge denim jacket and matching oversized relaxed-fit jeans against a stark clean studio background with warm sunlight accents, high contrast fashion magazine photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHdsdUqBytrR1WJ0lErqqPsUD1Xbjj3mkvSbwFPhgh3UDumPXMW1tBrxEFUcsDXd0xaDbuuXMTOy8fRhPxU0C4ulIs-5e0bti9paeO7NXpU2aA2pBPqdkImbHuEI5BKdtsJ8H-0rrQ4hOkkFsRHpHOXWCxz5xQAgThJKK__AI0krV86xpUrBr1kdi4M2JRo-xhJPIySvkxqUSdL-CGUVvuJLwORGZj51rEYFE-M3n5RHbcXrVdsvH-"/>
+<!-- Lookbook Price Hotspot / Silhouette Pill Sticker -->
+<div class="absolute top-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface uppercase">42 Silhouettes In Store</span>
+</div>
+<!-- Numeric Tag Pill -->
+<div class="absolute bottom-3 right-3 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm tracking-widest uppercase shadow-md">
+            Heavy 14oz Selvedge
+          </div>
+</div>
+<!-- Micro Specs & Explore Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Authorized Warranty</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">100% Brass Hardware &amp; Rivets</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- BRAND 2: RAMRAJ -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="heritage">
+<!-- Card Header Info -->
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-secondary-container/30 text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 02</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Tiruppur</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              RAMRAJ
+            </h2>
+<p class="font-label-md text-label-md text-secondary mt-1 font-bold">Heritage Spine &amp; Pure Cotton</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">temple_hindu</span>
+</span>
+</div>
+<!-- Editorial Split Image Display -->
+<div class="grid grid-cols-2 gap-2 h-64 rounded-DEFAULT overflow-hidden">
+<div class="h-full relative overflow-hidden rounded-l-DEFAULT">
+<img class="w-full h-full object-cover" data-alt="Artisanal portrait of crisp pristine white woven cotton dhoti with golden zari border fabric detail, high end editorial fashion texture shot under soft organic morning daylight." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDel0Bg2gJ6gDlsYaEEjgcJtzKDk008jfuqy7Kyt1o3_bu90HPy6qw9hCFjKLwqHhx1zohcBV_uY0tkdd3HY8lEO7MiSLcKoBuPS-wpKu7Kim4XL_uTAoq9-FqqwEwzKraKg-L7KaZ2uocVdQuOXNgMuPwiC1oXBW5WBpNaMXm809bXWyKvHvDg9LwlbXq3W9rOQhNYpd9ZxSQA_02xrN-Wm2COcY53AmkEFSzz-zoC9Uq1k4UKDuv6"/>
+<div class="absolute bottom-2 left-2 bg-on-surface/80 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+              Tiruppur Looms
+            </div>
+</div>
+<div class="h-full relative overflow-hidden rounded-r-DEFAULT">
+<img class="w-full h-full object-cover" data-alt="Distinguished South Asian model draped in a breathable woven fine white linen and combed cotton kurta shirt, minimal serene aesthetic, contemporary Indian craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVYO2vIbyljXlBSZvdLR9lvoZKSXgQD_qCyrbRp7JzRsYz6KmTGhQzCOTZF6l79SCw-lOvBN4FpwICplBcHQDtNQjcHkYcd8Ksr9OI-0BYRu3SfZBLPrUuWJjdtePWQ6Rg_6LpVouB6h-pZ545u-7W68yuo89HItsfUoHbjGoRo3RFt4prsNIapEAZRP-P9sSeRjhq2d3fOHINYzpNPfderDlPd-M_gVlgrTzMwibMog7sTKMCEhHq"/>
+<div class="absolute bottom-2 right-2 bg-secondary text-on-secondary px-2 py-0.5 rounded-full font-label-sm text-label-sm">
+              Zari Borders
+            </div>
+</div>
+</div>
+<!-- Micro Specs & Explore Action -->
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Fabric Grade</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">100% Combed Long-Staple Cotton</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- BRAND 3: SPORTIQ -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="athletic">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 03</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">New Delhi</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              SPORTIQ
+            </h2>
+<p class="font-label-md text-label-md text-primary mt-1 font-bold">Hyper-Mobility Athleisure</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">sprint</span>
+</span>
+</div>
+<!-- Full Bleed Photography with Floating Overlay Tag -->
+<div class="relative w-full h-72 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Athletic street fashion model mid-stride wearing sleek charcoal breathable running joggers and technical aerotech compression tee with teal geometric piping, captured with dynamic motion blur and bright architectural stadium lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwY2gipjvZBi5PsaMR5Y2GRT4gNTmT9TuaPOyVCCzR9QHDFqRyc0cf0QUIjJCRwdDEpjYKLy17hKzKEEmrFEEMpI5rvKGPlzOIbLbQig2vkllUuiv4W7QEwTHMIbRlnlBU6fY-jXYJwhGkeCMrZzO2ySVoR4JV2bjiy0LsqHPLRSk5iOh1AQO2RBl9OR5xBgSjh4A3B_qCix_WYX7ScSlq1TQEAFPMNtPWof2-5al_FoZvOUv72Sgf"/>
+<div class="absolute top-3 right-3 bg-primary text-on-primary px-3 py-1 rounded-full font-label-sm text-label-sm tracking-wider uppercase shadow-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">air</span>
+            Dry-Fit Aerotech
+          </div>
+<div class="absolute bottom-3 left-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface uppercase">4-Way Stretch • Seamless</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Performance Index</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Quick-Dry Anti-Odor Silver Knit</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- BRAND 4: IGNITE -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="denim">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-secondary-container/30 text-on-secondary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 04</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Mumbai</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              IGNITE
+            </h2>
+<p class="font-label-md text-label-md text-tertiary mt-1 font-bold">Youthful Cut &amp; Resort Florals</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">local_fire_department</span>
+</span>
+</div>
+<div class="relative w-full h-72 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Playful urban street-style editorial of a Gen Z creator wearing an open Cuban-collar resort shirt with bold botanical motifs in warm ochre, terracotta, and soft teal over a ribbed tank top, warm golden hour sun flare." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC57uz7l_fcGy-laFei1rBetMpLtSjMTntvDEi_i5Rlp1GQQXeCpPKbg_pARGYnZQaZz00JeVSqrgsJGCuslh9GYZcgfdHlQmV6XTvzmkTfGrEnfzdmmk4M215sdtHsiCnxcyKEKpW6-sDR7US7lKT2dyKWxiowoQn-JToTT1Radai3OHl5DOobCs5vEKasO8kMXpwfMGfUWfCr4vFzMd4q_8uezSIIiUi5kH7EqB4UVl9r3ARHNFXZ"/>
+<div class="absolute top-3 left-3 bg-tertiary text-on-tertiary px-3 py-1 rounded-full font-label-sm text-label-sm tracking-wider uppercase shadow-md">
+            240 GSM Heavy Cotton
+          </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Boxy Fit • Drop Shoulder</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Drop Cycle</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Limited Seasonal Colorways</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- BRAND 5: JOCKEY -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="intimates">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 05</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Bengaluru / USA</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              JOCKEY
+            </h2>
+<p class="font-label-md text-label-md text-primary mt-1 font-bold">Foundational Comfort Precision</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">all_inclusive</span>
+</span>
+</div>
+<div class="relative w-full h-72 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="Minimalist clean studio photography of high-grade micromodal lounge basics, neutral tones, ultra-soft combed cotton rib knit texture with elegant macro lighting and delicate fabric folds." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCk3y2Vfr7q115DzzLw7yL6MPdPuoLwKNAoPn9DxtuR0UgtNmWlfbBS1-Oi751TJcBL1odWUTjX4f4IeH_DO5BDyaAzLMjZj1OK2BM8ZNSoT_bku7Qm0P8uqECJ6B96DstC4SV5i89C6nSKke3fYkrNPGXNf0-d0QgT1pv0IPPuHodxpb4RzgMAmKGMGFX2qUnCRuJWQ-KMARAMwU9o5uU-7VjQrZOQLOHKPV1VaIF8UNIbImX2VVOA"/>
+<div class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full font-label-sm text-label-sm tracking-wider uppercase shadow-sm">
+            Micromodal Intimates
+          </div>
+<div class="absolute bottom-3 left-3 bg-primary text-on-primary px-3 py-1.5 rounded-full shadow-md font-label-sm text-label-sm uppercase flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">thumb_up</span>
+            Official Authorized Retailer
+          </div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Inventory Type</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Boxers, Trunks, Thermals &amp; Tees</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+<!-- BRAND 6: UNIBRO -->
+<article class="brand-card bg-surface-container-lowest rounded-lg p-space-md shadow-sm flex flex-col gap-space-md relative overflow-hidden transition-all duration-300" data-category="heritage">
+<div class="flex items-start justify-between gap-2">
+<div>
+<div class="flex items-center gap-1.5 mb-1">
+<span class="bg-primary/10 text-primary px-2 py-0.5 rounded-full font-label-sm text-label-sm uppercase">House 06</span>
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Kolkata</span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile uppercase tracking-tight text-on-surface leading-none">
+              UNIBRO
+            </h2>
+<p class="font-label-md text-label-md text-primary mt-1 font-bold">Sharp Executive Edge</p>
+</div>
+<span class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[20px]">style</span>
+</span>
+</div>
+<div class="relative w-full h-72 rounded-DEFAULT overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="High-fashion modern executive portrait of a professional wearing a tailored powder blue Oxford shirt with structured mother of pearl buttons and sharp tapered slim-fit navy chinos, minimalist modern architectural background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxJU-3TiwRpEu41sv-SX9Oj_f2jjzyfbSS3xLS0RGfE2F2H7z0zZID5rJCS2XAXNUMxUXZgXMFinY9HlZJ5aL_ZX8lfPQJ9GR2H_TKHKsYmlLO-9YcP7xVbaKAz-_3BuvaIA441jop5kRx1bFvh6SgSGiE7eQPw134dCMLAIAUraSZHQ_KPKUhjUghDtrOeIS2Fc4O56Me2vGcsu7tRXAnFJ7cdlO-x0MSMW-w8aVRs-ifABm8yZby"/>
+<div class="absolute top-3 left-3 bg-on-surface text-surface-container-lowest px-3 py-1 rounded-full font-label-sm text-label-sm tracking-wider uppercase shadow-md">
+            Wrinkle-Resistant Oxford
+          </div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-full shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface uppercase">Tailored Chinos &amp; Formals</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase">Fitting Standard</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Precision Fit In-Store Hemming</span>
+</div>
+<a class="h-11 px-5 rounded-full bg-on-surface text-surface-container-lowest flex items-center gap-2 font-label-sm text-label-sm tracking-wider uppercase hover:opacity-90 transition-opacity" href="#">
+<span>Explore Styles</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</article>
+</div>
+<!-- SOURCING CHARTER GUARANTEE (Structured Bento Trust Block) -->
+<section class="bg-surface-container-low rounded-lg p-space-lg flex flex-col gap-space-md relative overflow-hidden">
+<div class="flex items-center gap-2">
+<span class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Ravya Authenticity Pledge</span>
+</div>
+<div class="flex flex-col gap-1">
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface leading-tight">
+          Zero Duplicates.<br/>Direct Mill Logistics.
+        </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Every piece sold at our Sector 5, Rourkela boutique is procured strictly through verified parent company distribution channels. No secondary grey stock.
+        </p>
+</div>
+<div class="grid grid-cols-2 gap-space-sm pt-2">
+<div class="bg-surface-container-lowest p-3.5 rounded-DEFAULT flex flex-col gap-1">
+<span class="material-symbols-outlined text-primary text-[22px]">receipt_long</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">100% Tax Invoices</span>
+<span class="font-body-sm text-body-sm text-outline leading-tight">GST compliant bill issued with brand barcode warranty.</span>
+</div>
+<div class="bg-surface-container-lowest p-3.5 rounded-DEFAULT flex flex-col gap-1">
+<span class="material-symbols-outlined text-secondary text-[22px]">sync</span>
+<span class="font-label-md text-label-md text-on-surface mt-1">48-Hour Restock</span>
+<span class="font-body-sm text-body-sm text-outline leading-tight">Fast direct courier link with regional central warehouses.</span>
+</div>
+</div>
+</section>
+<!-- BRAND PARTNERSHIP INTAKE BANNER (Editorial Capsule Callout) -->
+<aside class="bg-primary text-on-primary rounded-lg p-space-lg flex flex-col gap-space-md shadow-md relative overflow-hidden">
+<!-- Background subtle decorative circle SVG -->
+<svg class="absolute -right-12 -bottom-12 w-44 h-44 text-primary-container/40 pointer-events-none" fill="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="50"></circle>
+</svg>
+<div class="relative z-10 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider">Storehouse Expansion</span>
+<h3 class="font-headline-sm text-headline-sm uppercase tracking-tight text-on-primary leading-tight">
+          Represent Your Label At Ravya
+        </h3>
+<p class="font-body-sm text-body-sm text-primary-fixed leading-snug mt-1">
+          Are you a certified apparel powerhouse or modern homegrown label seeking tier-1 shelf presence in Rourkela?
+        </p>
+</div>
+<div class="relative z-10 pt-1">
+<a class="h-12 w-full rounded-full bg-surface-container-lowest text-on-surface flex items-center justify-center gap-2 font-label-md text-label-md uppercase tracking-wider shadow-sm hover:bg-surface-variant transition-colors" href="https://wa.me/" target="_blank">
+<span>Apply For Shelf Placement</span>
+<span class="material-symbols-outlined text-[18px]">north_east</span>
+</a>
+</div>
+</aside>
+</div>
+</div>
+<script>
+  // Filter logic for category pills
+  (function initBrandFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const brandCards = document.querySelectorAll('.brand-card');
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filterVal = button.getAttribute('data-filter');
+
+        // Update active button styling
+        filterButtons.forEach(btn => {
+          btn.classList.remove('bg-on-surface', 'text-surface-container-lowest');
+          btn.classList.add('bg-surface-container-high', 'text-on-surface-variant');
+        });
+        button.classList.add('bg-on-surface', 'text-surface-container-lowest');
+        button.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
+
+        // Filter cards smoothly
+        brandCards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filterVal === 'all' || category === filterVal) {
+            card.style.display = 'flex';
+            setTimeout(() => {
+              card.style.opacity = '1';
+              card.style.transform = 'translateY(0)';
+            }, 10);
+          } else {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(8px)';
+            setTimeout(() => {
+              card.style.display = 'none';
+            }, 200);
+          }
+        });
+      });
+    });
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/90 backdrop-blur-xl shadow-[0_-1px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary [&amp;&gt;div]:bg-primary/10 [&amp;&gt;div]:scale-105"><div class="flex justify-between items-center h-20 px-2"><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="home" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">home</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Home</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="catalog" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">grid_view</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Catalog</span></a><a aria-current="page" class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 transition-all text-primary [&amp;&gt;div]:bg-primary/10 [&amp;&gt;div]:scale-105" data-path="brands" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">verified</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Brands</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="story" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">auto_stories</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Story</span></a><a class="flex-1 flex flex-col items-center justify-center min-h-[44px] py-1 text-on-surface-variant transition-all" data-path="visit-us" href="#"><div class="w-10 h-7 rounded-full flex items-center justify-center transition-all"><span class="material-symbols-outlined text-[20px]">store</span></div><span class="font-label-sm text-label-sm mt-0.5 tracking-tight">Visit Us</span></a></div></nav></body></html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&amp;family=Syne:wght@700;800&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: 'class', theme: { extend: { colors: { 'tertiary-container': '#c05237', 'outline-variant': '#bcc9c6', 'outline': '#6d7a77', 'on-primary-container': '#f4fffb', 'error': '#ba1a1a', 'on-secondary-fixed-variant': '#6f3800', 'primary-fixed-dim': '#6fd8c8', 'inverse-primary': '#6fd8c8', 'tertiary-fixed': '#ffdad2', 'surface-container': '#ecefec', 'on-tertiary': '#ffffff', 'inverse-surface': '#2d3130', 'surface-bright': '#f7faf8', 'surface-container-lowest': '#ffffff', 'on-primary': '#ffffff', 'primary': '#00685d', 'primary-fixed': '#8cf5e4', 'tertiary-fixed-dim': '#ffb4a2', 'secondary': '#8e4e14', 'on-tertiary-fixed-variant': '#83260e', 'on-secondary': '#ffffff', 'secondary-fixed': '#ffdcc4', 'surface': '#f7faf8', 'surface-container-low': '#f1f4f2', 'surface-container-high': '#e6e9e7', 'secondary-fixed-dim': '#ffb780', 'on-primary-fixed-variant': '#005048', 'surface-dim': '#d8dbd9', 'on-secondary-fixed': '#2f1400', 'on-tertiary-container': '#fffbff', 'surface-variant': '#e0e3e1', 'on-error': '#ffffff', 'surface-container-highest': '#e0e3e1', 'on-primary-fixed': '#00201c', 'primary-container': '#008376', 'on-surface': '#181c1b', 'on-background': '#181c1b', 'surface-tint': '#006a60', 'error-container': '#ffdad6', 'background': '#f7faf8', 'secondary-container': '#ffab69', 'on-tertiary-fixed': '#3c0700', 'on-surface-variant': '#3d4947', 'inverse-on-surface': '#eef1ef', 'on-secondary-container': '#783d01', 'on-error-container': '#93000a', 'tertiary': '#a03b21' }, borderRadius: { 'DEFAULT': '1rem', 'lg': '2rem', 'xl': '3rem', 'full': '9999px' }, spacing: { 'space-xs': '0.25rem', 'gutter': '1.5rem', 'margin': '2rem', 'space-md': '1rem', 'space-lg': '1.5rem', 'space-xl': '2.5rem', 'gutter-mobile': '1rem', 'margin-mobile': '1rem', 'space-sm': '0.5rem' }, fontFamily: { 'body-sm': ['Plus Jakarta Sans'], 'headline-lg': ['Syne'], 'body-lg': ['Plus Jakarta Sans'], 'label-sm': ['Plus Jakarta Sans'], 'label-lg': ['Plus Jakarta Sans'], 'display-lg-mobile': ['Syne'], 'headline-sm': ['Syne'], 'body-md': ['Plus Jakarta Sans'], 'label-md': ['Plus Jakarta Sans'], 'headline-lg-mobile': ['Syne'], 'display-lg': ['Syne'], 'headline-md': ['Syne'] }, fontSize: { 'body-sm': ['13px', { lineHeight: '20px', fontWeight: '400' }], 'headline-lg': ['40px', { lineHeight: '48px', letterSpacing: '-0.02em', fontWeight: '700' }], 'body-lg': ['18px', { lineHeight: '28px', fontWeight: '500' }], 'label-sm': ['10px', { lineHeight: '14px', letterSpacing: '0.08em', fontWeight: '800' }], 'label-lg': ['14px', { lineHeight: '18px', letterSpacing: '0.02em', fontWeight: '700' }], 'display-lg-mobile': ['36px', { lineHeight: '42px', letterSpacing: '-0.02em', fontWeight: '800' }], 'headline-sm': ['20px', { lineHeight: '28px', fontWeight: '700' }], 'body-md': ['15px', { lineHeight: '24px', fontWeight: '400' }], 'label-md': ['12px', { lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '700' }], 'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '-0.01em', fontWeight: '700' }], 'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.03em', fontWeight: '800' }], 'headline-md': ['28px', { lineHeight: '36px', letterSpacing: '-0.01em', fontWeight: '700' }] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 w-full px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[20px]">apparel</span></div><a class="flex flex-col" data-path="home" href="#"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface uppercase">Ravya</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-primary">Fashion • Rourkela</span></a></div><nav class="hidden xl:flex items-center p-space-xs bg-surface-container rounded-full" data-active-classes="bg-primary-container text-on-primary-container font-bold shadow-sm"><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="home" href="#">Home</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="shop-catalog" href="#">Shop (Catalog)</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="brand-directory" href="#">Brands</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="about-our-story" href="#">About Our Story</a><a class="px-space-md py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-all" data-path="visit-store-rourkela" href="#">Visit Store</a></nav><div class="flex items-center gap-space-sm"><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-full"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span><span class="w-2 h-2 -ml-3 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Open In-Store</span></div><button aria-label="Search catalog" class="w-10 h-10 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface flex items-center justify-center transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">search</span></button><a class="hidden sm:inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-primary transition-all font-label-md text-label-md shadow-sm" href="https://wa.me/919999999999" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[18px]">chat</span><span>WhatsApp Concierge</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Outer Editorial Enclosure Frame -->
+<div class="w-full px-gutter-mobile md:px-gutter py-space-md lg:py-space-xl">
+<div class="max-w-7xl mx-auto space-y-space-xl">
+<!-- Header Section: High-Fashion Neo-Editorial Title & Meta Badges -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg md:p-space-xl shadow-sm relative overflow-hidden">
+<div class="absolute -top-24 -right-24 w-80 h-80 rounded-full bg-primary-fixed/25 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 left-1/3 w-64 h-64 rounded-full bg-secondary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg">
+<div class="space-y-space-sm max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-surface-container text-on-surface-variant">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface">Physical Experience Center • Odisha 769001</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg uppercase text-on-surface tracking-tight leading-none">
+              Visit Us <span class="text-primary">— Sector 5,</span> Rourkela
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              Address, weekly hours, real-time styling concierge, and instant one-tap directions to our flagship Steel City boutique showroom.
+            </p>
+</div>
+<!-- Quick Micro Metric Stickers -->
+<div class="flex flex-wrap sm:flex-nowrap items-center gap-space-sm pt-space-xs">
+<div class="bg-primary text-on-primary px-space-md py-space-sm rounded-lg flex items-center gap-space-xs shadow-sm">
+<span class="material-symbols-outlined text-[24px]">verified</span>
+<div>
+<p class="font-headline-sm text-headline-sm leading-none">4.9★</p>
+<p class="font-label-sm text-label-sm uppercase opacity-85">1,280+ Reviews</p>
+</div>
+</div>
+<div class="bg-secondary-container text-on-secondary-container px-space-md py-space-sm rounded-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[24px]">near_me</span>
+<div>
+<p class="font-headline-sm text-headline-sm leading-none">Sector 5</p>
+<p class="font-label-sm text-label-sm uppercase opacity-90">Prime Promenade</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Split Interactive Section: Map Preview Card + Store Details Card -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Left: Stylized Interactive Map Preview Card (7 Columns) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm space-y-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[22px]">explore</span>
+<span class="font-headline-sm text-headline-sm uppercase text-on-surface">Interactive Wayfinding</span>
+</div>
+<span class="px-space-md py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm uppercase text-on-surface-variant">Live Satellite • GPS Linked</span>
+</div>
+<!-- Stylized Map Viewport Canvas -->
+<div class="relative w-full h-[380px] md:h-[460px] rounded-lg overflow-hidden bg-surface-container-high group">
+<!-- Google Maps Static Pipeline Trigger Container -->
+<div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="High quality aerial satellite and road view of Sector 5 Rourkela Odisha commercial avenue, clean architectural cityscape with green tree canopy, subtle sunlight reflections, editorial map aesthetic with clean roads" data-location="Sector 5, Rourkela, Odisha 769001" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCSckkMkPhkQGSLJrFlocoYoc9Fs46mrJ-xjkYOMNmBPuMWf89ModSR44VVVZ2AH13LRHbYyeRUjdyg0mfdWG8Y0fVfja7qW5-d05_MiVgFwWrUjM9Ingy8CqhbteA_QgJ9pZ4yCxZ0Fjp8xtfJUvHu4Fs6yjB6II3p2wDsTqys9D8Nm0wiA-o7WIGaXH_DYixydKpTzHeL4-oBjMa1RDDGfmajEEz5ldhknk5H2aLB6J5z25DRfypw')">
+</div>
+<!-- Soft Overlay Gradient Scrim -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/85 via-inverse-surface/20 to-transparent pointer-events-none"></div>
+<!-- Floating Central Flagship Pin Sticker -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+<div class="relative flex items-center justify-center">
+<span class="absolute w-12 h-12 rounded-full bg-primary/40 animate-ping"></span>
+<div class="relative z-10 w-11 h-11 rounded-full bg-primary text-on-primary flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-[24px]">storefront</span>
+</div>
+</div>
+<div class="mt-space-xs bg-surface/95 backdrop-blur-md px-space-md py-space-xs rounded-full shadow-md text-center">
+<p class="font-label-md text-label-md text-on-surface tracking-tight font-bold">RAVYA FLAGSHIP</p>
+<p class="font-label-sm text-label-sm text-primary uppercase">Floor 1 &amp; 2 • Sector 5</p>
+</div>
+</div>
+<!-- Key Proximity Landmark Pins Floating inside Map -->
+<div class="absolute top-4 left-4 flex flex-col gap-space-xs max-w-xs">
+<div class="bg-surface/90 backdrop-blur-md px-space-sm py-space-xs rounded-full shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">park</span>
+<span class="font-label-sm text-label-sm text-on-surface">Opposite Biju Patnaik Park</span>
+</div>
+<div class="bg-surface/90 backdrop-blur-md px-space-sm py-space-xs rounded-full shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">alt_route</span>
+<span class="font-label-sm text-label-sm text-on-surface">5 mins from VIP Chowk</span>
+</div>
+</div>
+<!-- Station Landmark Badge -->
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-space-sm py-space-xs rounded-full shadow-sm flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[16px] text-tertiary">train</span>
+<span class="font-label-sm text-label-sm text-on-surface">12 mins from Rourkela Station</span>
+</div>
+<!-- Bottom Action Inside Map Area -->
+<div class="absolute bottom-4 left-4 right-4 flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<div class="text-surface-bright hidden sm:block">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-primary-fixed">Valet &amp; Reserved Parking</p>
+<p class="font-body-sm text-body-sm text-inverse-on-surface">Dedicated basement bays available for store guests</p>
+</div>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-lg py-space-sm rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container transition-all shadow-md" href="https://maps.google.com/?q=Sector+5+Rourkela+Odisha" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+<span>Get Live GPS Directions</span>
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+</a>
+</div>
+</div>
+<!-- Street Snapshot & Architecture Strip -->
+<div class="grid grid-cols-3 gap-space-sm pt-space-xs">
+<div class="relative h-20 rounded-DEFAULT overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="Modern high street boutique storefront exterior glass facade in Sector 5 commercial avenue with elegant mannequin displays and warm neon sign lights" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC31kWomYnNNaiTs65I0P4KdTbTsQicrGx2Id8H94n4wwnxjLZzXDBF3K9eeXZtDUtj8xXu8LtDp1TaBhhdSlSoj6acBdpyziSK63-5_Kgrr6z0MNgRriDQRzu6KxV-NkWBK3Y_TDBoKL-QUluEZdvM5lH81AkMvnXkCOMqYV0gK3EnGyjC_dG-IBc8N3xdzpdooAr-UGHohjQ0YL4Nuzs5JKLVuNS1BsSIKgc6v_o8M4kDRqtXhfE3')"></div>
+<span class="absolute bottom-1 left-2 font-label-sm text-label-sm text-surface-bright bg-inverse-surface/80 px-1.5 py-0.5 rounded-full">Facade View</span>
+</div>
+<div class="relative h-20 rounded-DEFAULT overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="Bright high ceiling fashion showroom interior with architectural terrazzo arches, brass apparel racks, and curated designer garment rails" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDqeRQJJ_7dGKFG-9CXFIHIZcMNccMa9tq3O-yFjrgoEE9sI1v1rEJdNrAuO1PHnAEykp2qQgx8YuSYrY5hTS0NvUnOvenvwxExscS0dkvezq4-wvjHGqhfAPN9Nf1vnjjHFD39BSmaLBI3pGgjPSwfD3NOsCvnKrmRXoSeTkmCooq2GauoihfV2lIw1x5XutI-BsXQcTCrM1Bj13pQ0May8qRYgA8sJsgGJ8ApMegUbXwMzsM9MdM')"></div>
+<span class="absolute bottom-1 left-2 font-label-sm text-label-sm text-surface-bright bg-inverse-surface/80 px-1.5 py-0.5 rounded-full">Floor 1 Curation</span>
+</div>
+<div class="relative h-20 rounded-DEFAULT overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center transition-transform group-hover:scale-110 duration-500" data-alt="VIP fitting lounge with plush velvet armchair, warm architectural backlight mirrors, and complimentary espresso service corner" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC48lltP4a9WPAKyD0mLIgv57fwrWsXOYbq1sZoK-ymrIhLNFYr9oN7nxeolfNe2FumIkuCICWUB5meIrcmIjEy4eI7rYwqml_fuFc7eRfiUIeTWnR_yCXNGyxTE6LmlvhIVkIAeb-I6NUZwiEYZppyJZKRBDc1RFj7L1vJ33vG2vgzUeSUbkO6YPWZZuw9uAXYrY8HgKpirbY0olxIgYIbKlxyERgAesY5kuhColRiv-YuM6Uhy7xG')"></div>
+<span class="absolute bottom-1 left-2 font-label-sm text-label-sm text-surface-bright bg-inverse-surface/80 px-1.5 py-0.5 rounded-full">VIP Fitting Suite</span>
+</div>
+</div>
+</div>
+<!-- Right: Store Details Card, Realtime Badge, Interactive Hours, Quick Action Pills (5 Columns) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-sm space-y-space-md flex flex-col justify-between">
+<div class="space-y-space-sm">
+<!-- Live Opening Status Capsule -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-fixed animate-ping"></span>
+<span class="font-label-sm text-label-sm uppercase font-extrabold tracking-wider">🟢 Open Now • Until 21:00 IST</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Local Time: Asia/Kolkata</span>
+</div>
+<!-- Address Block -->
+<div class="pt-space-xs space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Steel City Flagship Showroom</span>
+<h2 class="font-headline-md text-headline-md text-on-surface uppercase">Sector 5 Commercial Promenade</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Above Radhika Jewellers, Main Commercial Ring,<br/>
+                Udit Nagar / Sector 5, Rourkela, Sundargarh, Odisha – 769001
+              </p>
+<div class="flex items-center gap-space-sm pt-space-xs">
+<span class="px-space-sm py-space-xs bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface">Plot No. C-14</span>
+<span class="px-space-sm py-space-xs bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface">Opposite Main Gate Park</span>
+<span class="px-space-sm py-space-xs bg-surface-container rounded-full font-label-sm text-label-sm text-on-surface">Lift &amp; Ramp Access</span>
+</div>
+</div>
+<!-- Interactive Day-by-Day Hours Table with Today Highlighted -->
+<div class="pt-space-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<span class="font-label-md text-label-md uppercase text-on-surface">Weekly Showroom Hours</span>
+<span class="font-label-sm text-label-sm text-primary">All 7 Days Operational</span>
+</div>
+<div class="space-y-1 bg-surface-container-low p-space-sm rounded-lg" id="weekly-hours-container">
+<!-- Monday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="1">
+<span class="w-28 font-medium">Monday</span>
+<span>10:00 AM – 09:00 PM</span>
+<span class="font-label-sm text-label-sm text-outline">Normal</span>
+</div>
+<!-- Tuesday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="2">
+<span class="w-28 font-medium">Tuesday</span>
+<span>10:00 AM – 09:00 PM</span>
+<span class="font-label-sm text-label-sm text-outline">Normal</span>
+</div>
+<!-- Wednesday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="3">
+<span class="w-28 font-medium">Wednesday</span>
+<span>10:00 AM – 09:00 PM</span>
+<span class="font-label-sm text-label-sm text-outline">New Arrivals</span>
+</div>
+<!-- Thursday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="4">
+<span class="w-28 font-medium">Thursday</span>
+<span>10:00 AM – 09:00 PM</span>
+<span class="font-label-sm text-label-sm text-outline">Normal</span>
+</div>
+<!-- Friday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="5">
+<span class="w-28 font-medium">Friday</span>
+<span>10:00 AM – 09:30 PM</span>
+<span class="font-label-sm text-label-sm text-secondary">Late Hours</span>
+</div>
+<!-- Saturday (Highlighted as Weekend Highlight or dynamically via JS) -->
+<div class="flex items-center justify-between px-space-sm py-1.5 rounded-DEFAULT text-body-sm font-body-sm bg-primary text-on-primary font-bold shadow-sm" data-day="6">
+<span class="w-28 flex items-center gap-1">
+<span>Saturday</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-fixed"></span>
+</span>
+<span>10:00 AM – 09:30 PM</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container">Today</span>
+</div>
+<!-- Sunday -->
+<div class="flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors" data-day="0">
+<span class="w-28 font-medium">Sunday</span>
+<span>10:00 AM – 09:30 PM</span>
+<span class="font-label-sm text-label-sm text-tertiary">Styling Rush</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action Pill Buttons Stack -->
+<div class="pt-space-md space-y-space-xs">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-xs">
+<a class="flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-primary transition-all font-label-md text-label-md uppercase tracking-wider text-center shadow-sm" href="https://maps.google.com/?q=Sector+5+Rourkela+Odisha" rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">directions</span>
+<span>Get Directions</span>
+</a>
+<a class="flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface transition-all font-label-md text-label-md uppercase tracking-wider text-center" href="tel:+916612500000">
+<span class="material-symbols-outlined text-[18px]">call</span>
+<span>Call Showroom</span>
+</a>
+</div>
+<a class="w-full flex items-center justify-center gap-space-xs px-space-md py-space-sm rounded-full bg-secondary text-on-secondary hover:bg-secondary-container hover:text-on-secondary-container transition-all font-label-md text-label-md uppercase tracking-wider text-center shadow-sm" href="https://wa.me/919999999999?text=Hi%20Ravya%20Styling%20Desk,%20I%20am%20planning%20to%20visit%20the%20Sector%205%20store%20today." rel="noopener" target="_blank">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+<span>WhatsApp Concierge (Instant Size &amp; Stock Check)</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Amenities & Boutique Perks Grid: 4 Rounded Cards -->
+<section class="space-y-space-md">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-xs">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">In-Store Hospitality</span>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-on-surface">Flagship Boutique Perks</h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Every floor is engineered for tactile styling, bespoke fits, and friction-free fashion discovery.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Perk 1: Private Fitting Suites -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm flex flex-col justify-between hover:translate-y-[-4px] transition-transform duration-300">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[26px]">styler</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">Private Fitting Suites</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Triple-angle halo lighting with adjustable day, evening, and cocktail color temperatures.</p>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase font-bold">
+<span>Smart Mirrors Equipped</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</div>
+</div>
+<!-- Perk 2: Steam & Pressing Service -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm flex flex-col justify-between hover:translate-y-[-4px] transition-transform duration-300">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed">
+<span class="material-symbols-outlined text-[26px]">iron</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">Steam &amp; Pressing Service</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complimentary fabric refresh and anti-crease high-pressure steaming for ready-to-wear walkouts.</p>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-secondary font-label-sm text-label-sm uppercase font-bold">
+<span>Complimentary On-Spot</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</div>
+</div>
+<!-- Perk 3: Master On-Floor Tailoring (30-min) -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm flex flex-col justify-between hover:translate-y-[-4px] transition-transform duration-300">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[26px]">content_cut</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">30-Min Master Tailor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Trousers cuffing, sleeve adjustments, and waistband tuning while you browse or enjoy espresso.</p>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm uppercase font-bold">
+<span>Rapid Turnaround</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</div>
+</div>
+<!-- Perk 4: Digital Kiosk Rack Reservation -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm space-y-space-sm flex flex-col justify-between hover:translate-y-[-4px] transition-transform duration-300">
+<div class="space-y-space-xs">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[26px]">qr_code_scanner</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface uppercase">Digital Rack Holding</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pre-reserve your wardrobe pieces online, scan your personal token at entry, and head to room.</p>
+</div>
+<div class="pt-space-sm flex items-center gap-space-xs text-on-surface font-label-sm text-label-sm uppercase font-bold">
+<span>Zero-Wait Guarantee</span>
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+</div>
+</div>
+</div>
+</section>
+<!-- VIP Fitting Appointment Booking Teaser with Interactive Input Pills -->
+<section class="bg-primary text-on-primary rounded-xl p-space-lg md:p-space-xl shadow-lg relative overflow-hidden">
+<!-- Background Ambient Design Nodes -->
+<div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-primary-container/60 blur-2xl pointer-events-none"></div>
+<div class="absolute left-1/2 -bottom-24 w-72 h-72 rounded-full bg-secondary/30 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-center">
+<div class="lg:col-span-5 space-y-space-sm">
+<div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-primary-container text-on-primary-container">
+<span class="material-symbols-outlined text-[16px]">stars</span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider">Reserved Floor Experience</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase text-on-primary tracking-tight">
+              Book a 1-on-1 Stylist Session
+            </h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim">
+              Planning for a wedding, corporate conference, or complete season overhaul? Reserve a private suite with our master curator. Zero obligation, complimentary refreshment included.
+            </p>
+<div class="flex items-center gap-space-md pt-space-xs text-on-primary/80 font-body-sm text-body-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">schedule</span> 45 Minutes</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">coffee</span> Illy Coffee</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px]">checkroom</span> 8 Pre-pulled Outfits</span>
+</div>
+</div>
+<!-- Interactive Booking Card with Pill Inputs -->
+<div class="lg:col-span-7 bg-surface-container-lowest text-on-surface p-space-md md:p-space-lg rounded-lg shadow-xl">
+<form class="space-y-space-sm" id="fitting-booking-form" onsubmit="event.preventDefault(); handleBookingSubmit();">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Name Pill Input -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Your Full Name</label>
+<div class="flex items-center bg-surface-container px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[18px] text-outline mr-2">person</span>
+<input class="w-full bg-transparent text-on-surface placeholder:text-outline-variant font-body-md text-body-md focus:outline-none" placeholder="Aarav Sharma" required="" type="text"/>
+</div>
+</div>
+<!-- Phone Pill Input -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Mobile / WhatsApp</label>
+<div class="flex items-center bg-surface-container px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[18px] text-outline mr-2">phone_iphone</span>
+<input class="w-full bg-transparent text-on-surface placeholder:text-outline-variant font-body-md text-body-md focus:outline-none" placeholder="+91 98765 43210" required="" type="tel"/>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<!-- Date Selector Pill -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Preferred Date</label>
+<div class="flex items-center bg-surface-container px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[18px] text-outline mr-2">calendar_today</span>
+<select class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none appearance-none cursor-pointer">
+<option>Today • Evening Slot</option>
+<option>Tomorrow • Afternoon Slot</option>
+<option>This Saturday • VIP Priority</option>
+<option>This Sunday • VIP Priority</option>
+</select>
+</div>
+</div>
+<!-- Styling Category Pill -->
+<div class="space-y-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-outline">Styling Focus</label>
+<div class="flex items-center bg-surface-container px-space-md py-space-xs rounded-full">
+<span class="material-symbols-outlined text-[18px] text-outline mr-2">checkroom</span>
+<select class="w-full bg-transparent text-on-surface font-body-md text-body-md focus:outline-none appearance-none cursor-pointer">
+<option>Festive &amp; Occasion Wear</option>
+<option>Contemporary Street &amp; High-Street</option>
+<option>Executive Tailoring &amp; Blazers</option>
+<option>Seasonal Capsule Wardrobe</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Submit Button and Confirmation Status Area -->
+<div class="pt-space-xs flex flex-col sm:flex-row items-center justify-between gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">lock</span>
+                  Immediate WhatsApp confirmation will follow
+                </span>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-inverse-surface text-inverse-on-surface hover:bg-primary transition-all font-label-md text-label-md uppercase tracking-wider shadow-sm" id="booking-btn" type="submit">
+<span>Confirm Suite VIP Reservation</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+<!-- Inline Success Banner (Hidden by default, triggered on submit) -->
+<div class="hidden mt-space-sm p-space-sm rounded-DEFAULT bg-primary-fixed text-on-primary-fixed flex items-center gap-space-xs font-body-sm text-body-sm" id="booking-success">
+<span class="material-symbols-outlined text-primary text-[20px]">check_circle</span>
+<span>VIP Suite reserved! Our head stylist at Sector 5 has been notified and sent a WhatsApp verification.</span>
+</div>
+</form>
+</div>
+</div>
+</section>
+<!-- Neighborhood Curated Guide Micro-Section -->
+<section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm pb-space-md border-b border-surface-container">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">local_activity</span>
+<h3 class="font-headline-sm text-headline-sm uppercase text-on-surface">Making a Day of Your Visit to Sector 5</h3>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Steel City Neighborhood Guide</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-md">
+<div class="flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-headline-sm flex-shrink-0">1</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Artisan Coffee &amp; Patisserie</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Grab hand-poured brews at Roast Haus, just 2 doors down the promenade.</p>
+</div>
+</div>
+<div class="flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-headline-sm flex-shrink-0">2</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Biju Patnaik Park Stroll</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Walk through the city's lush botanical gardens directly opposite our front glass doors.</p>
+</div>
+</div>
+<div class="flex gap-space-sm items-start">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-primary font-headline-sm text-headline-sm flex-shrink-0">3</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface">Same-Day Hemming Pick-up</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Drop garments for custom tailoring adjustments and collect them after your coffee break.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<script>
+  // Highlighting current day dynamically in the weekly hours table
+  (function initHoursHighlight() {
+    const todayIndex = new Date().getDay(); // 0 is Sunday, 1 is Monday, etc.
+    const container = document.getElementById('weekly-hours-container');
+    if (!container) return;
+    
+    const rows = container.querySelectorAll('[data-day]');
+    rows.forEach(row => {
+      const rowDay = parseInt(row.getAttribute('data-day'), 10);
+      if (rowDay === todayIndex) {
+        // Apply active accent style
+        row.className = 'flex items-center justify-between px-space-sm py-1.5 rounded-DEFAULT text-body-sm font-body-sm bg-primary text-on-primary font-bold shadow-sm';
+        // Check for tag
+        let tag = row.querySelector('.font-label-sm');
+        if (tag) {
+          tag.className = 'font-label-sm text-label-sm px-1.5 py-0.5 rounded-full bg-primary-container text-on-primary-container';
+          tag.textContent = 'Today';
+        }
+      } else {
+        // Reset non-today rows cleanly
+        row.className = 'flex items-center justify-between px-space-sm py-1 rounded-DEFAULT text-body-sm font-body-sm text-on-surface-variant hover:bg-surface transition-colors';
+      }
+    });
+  })();
+
+  // Micro-interaction for booking form submission
+  function handleBookingSubmit() {
+    const btn = document.getElementById('booking-btn');
+    const successBanner = document.getElementById('booking-success');
+    if (!btn || !successBanner) return;
+    
+    btn.disabled = true;
+    btn.innerHTML = '<span>Reserving...</span>';
+    
+    setTimeout(() => {
+      btn.innerHTML = '<span>Reservation Locked</span><span class="material-symbols-outlined text-[18px]">check</span>';
+      btn.className = 'w-full sm:w-auto inline-flex items-center justify-center gap-space-xs px-space-xl py-space-sm rounded-full bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider shadow-sm cursor-default';
+      successBanner.classList.remove('hidden');
+    }, 600);
+  }
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl py-space-xl px-gutter"><div class="max-w-7xl mx-auto space-y-space-xl"><div class="p-space-xl bg-surface-container-lowest rounded-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] relative overflow-hidden"><div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-lg"><div class="max-w-2xl space-y-space-sm"><div class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm uppercase"><span class="material-symbols-outlined text-[14px]">verified</span><span>Editorial Curation • Steel City</span></div><h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">The Language of Clothing / RAVYA</h2><p class="font-body-md text-body-md text-on-surface-variant">Elevating daily wardrobes in Rourkela, Odisha with original high-street styles, heritage classics, and contemporary tailoring.</p></div><div class="w-full lg:w-auto"><form class="flex items-center bg-surface-container-low p-space-xs rounded-full max-w-md" onsubmit="event.preventDefault();"><input class="bg-transparent px-space-md py-space-xs text-on-surface placeholder:text-outline text-body-sm font-body-sm focus:outline-none flex-1" placeholder="Enter email for lookbook drops..." required="" type="email"/><button class="px-space-md py-space-xs rounded-full bg-primary text-on-primary font-label-md text-label-md hover:bg-primary-container transition-colors" type="submit">Subscribe</button></form></div></div></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-lg"><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Authorized Brand Hub</span><div class="flex flex-wrap gap-space-xs pt-space-xs"><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Killer</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Ramraj</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Sportiq</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Ignite</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Jockey</span><span class="px-space-sm py-space-xs rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">Unibro</span></div></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Store Timings</span><p class="font-body-md text-body-md text-on-surface">Monday – Sunday<br/><span class="font-label-lg text-label-lg text-on-surface-variant">10:00 AM – 09:30 PM</span></p><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-[16px] text-primary">storefront</span><span>Open 7 Days a Week</span></div></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Rourkela Flagship</span><p class="font-body-md text-body-md text-on-surface">Main Road, Near Daily Market,<br/>Rourkela, Sundargarh, Odisha – 769001</p><a class="inline-flex items-center gap-space-xs text-primary font-label-md text-label-md hover:underline" data-path="visit-store-rourkela" href="#"><span class="material-symbols-outlined text-[16px]">map</span><span>Get Directions</span></a></div><div class="p-space-lg bg-surface-container-lowest rounded-lg space-y-space-sm"><span class="font-label-sm text-label-sm uppercase tracking-wider text-primary">Personal Stylist Desk</span><p class="font-body-md text-body-md text-on-surface">Need quick sizing, outfit pairings, or wedding trousseau reserve?</p><div class="pt-space-xs"><a class="inline-flex items-center gap-space-xs px-space-md py-space-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md hover:bg-secondary-container hover:text-on-secondary-container transition-all" href="https://wa.me/919999999999" rel="noopener" target="_blank"><span class="material-symbols-outlined text-[18px]">support_agent</span><span>Talk with Stylist</span></a></div></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-body-sm text-body-sm"><p>© 2025 RAVYA FASHION. All Rights Reserved. Crafted for Odisha's new vanguard.</p><div class="flex items-center gap-space-lg"><a class="hover:text-on-surface transition-colors" href="#">Privacy Policy</a><a class="hover:text-on-surface transition-colors" href="#">Terms of Service</a><a class="hover:text-on-surface transition-colors" href="#">Store Locator</a></div></div></div></footer></body></html>
