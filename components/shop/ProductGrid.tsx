@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { products } from '@/data/products';
 import { filterProducts } from '@/lib/filter';
@@ -21,15 +21,16 @@ export function ProductGrid() {
   const flipEnabled = !lowmem && !reducedMotion;
   const { measure, play } = useFlip(containerRef, flipEnabled);
 
-  const filtered = filterProducts(products, { cat, brand, tier });
-  const items =
-    sort === 'price-asc'
-      ? [...filtered].sort((a, b) => a.price - b.price)
-      : sort === 'price-desc'
-        ? [...filtered].sort((a, b) => b.price - a.price)
-        : sort === 'new'
-          ? [...filtered].sort((a, b) => Number(b.isNew ?? false) - Number(a.isNew ?? false))
-          : filtered;
+  // Memoised: this is a pure derivation of search params, but it was rebuilding
+  // (and re-allocating) a fresh array on every render, which defeats React.memo
+  // on the cards below even when the filter has not changed.
+  const items = useMemo(() => {
+    const list = filterProducts(products, { cat, brand, tier });
+    if (sort === 'price-asc') return [...list].sort((a, b) => a.price - b.price);
+    if (sort === 'price-desc') return [...list].sort((a, b) => b.price - a.price);
+    if (sort === 'new') return [...list].sort((a, b) => Number(b.isNew ?? false) - Number(a.isNew ?? false));
+    return list;
+  }, [cat, brand, tier, sort]);
 
   const [rendered, setRendered] = useState<Product[]>(items);
   const first = useRef(true);

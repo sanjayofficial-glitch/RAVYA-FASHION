@@ -97,13 +97,16 @@ Global button: "Hi Ravya Fashion! I'd like to know what's new in store."
 TECH STACK (fixed — do not substitute)
 ═══════════════════════════════════════════════
 - Next.js 14+ (App Router) + TypeScript (strict) + Tailwind CSS
-- Framer Motion ONLY for below-the-fold reveals & modals — tree-shaken;
-  all above-the-fold animation in pure CSS transforms/opacity
+- Motion: hand-rolled spring primitive (hooks/useSpring.ts) for anything that
+  must be interruptible — sheet drag-to-dismiss, QuickView materialization,
+  FLIP grid reflow, the bottom-nav indicator. Pure CSS transitions/keyframes
+  for everything fixed-duration and not gesture-driven. No animation library.
 - next/image with blurDataURL LQIP; AVIF/WebP; explicit width/height to
   kill CLS
 - State: React hooks + URL search params (no heavy store lib)
 - Data: typed local JSON/MD catalog (products.ts) — decouple data from UI
   so the owner can edit inventory without touching components
+- Fonts: Syne for display only; body copy on the platform system stack (§15)
 - Deploy: static-first (SSG all routes, ISR optional for catalog)
 
 ═══════════════════════════════════════════════
@@ -114,7 +117,9 @@ RESILIENCE & PERFORMANCE CONTRACT (test all of these)
 - route prefetch on intent (hover/touchstart) for instant nav
 - skeletons for every async surface; never a blank white flash
 - prefers-reduced-motion: all reveals/parallax/ticker disabled → simple
-  fade only
+  fade only; sheet drag-to-dismiss degrades to an overshoot-free cross-fade
+- prefers-reduced-transparency / prefers-contrast: frost goes solid, muted
+  ink and hairlines darken
 - navigator.connection.saveData OR effectiveType 2g → disable ticker
   animation, map interactivity, auto carousels; serve smallest images
 - deviceMemory < 4 → reduce carousel to snap-scroll without transforms

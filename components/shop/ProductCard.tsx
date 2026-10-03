@@ -1,6 +1,8 @@
 'use client';
 
+import { memo } from 'react';
 import { products } from '@/data/products';
+import { PRODUCT_LQIP } from '@/data/lqip';
 import { brandMap } from '@/data/brands';
 import { formatPrice } from '@/lib/format';
 import { productEnquiry } from '@/lib/whatsapp';
@@ -13,20 +15,21 @@ export function openQuickView(id: string) {
   window.dispatchEvent(new CustomEvent('ravya:qv', { detail: id }));
 }
 
-export function ProductCard({ product }: { product: Product }) {
+function ProductCardImpl({ product }: { product: Product }) {
   const brand = brandMap[product.brand];
+  const price = formatPrice(product.price, product.priceTo);
 
   return (
     <article data-flip-id={product.id} className="pressable group flex flex-col rounded-lg bg-white p-2.5 shadow-[0_1px_8px_rgba(0,0,0,0.05)]">
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-canvas-alt">
-        <ProductImage src={product.image} alt={product.name} lqip={product.lqip} className="h-full w-full" />
+        <ProductImage src={product.image} alt={product.name} lqip={PRODUCT_LQIP[product.id]} className="h-full w-full" />
         {product.isNew ? (
           <span className="absolute left-2 top-2">
             <NewBadge />
           </span>
         ) : null}
         <span className="absolute bottom-2 right-2 rounded-pill bg-white/85 px-2.5 py-1 text-xs font-bold text-ink backdrop-blur-md">
-          {formatPrice(product.price, product.priceTo)}
+          {price}
         </span>
       </div>
       <div className="flex flex-col gap-0.5 px-1 pb-1 pt-2">
@@ -60,6 +63,13 @@ export function ProductCard({ product }: { product: Product }) {
     </article>
   );
 }
+
+/**
+ * A filter change re-renders every card in the grid and none of them change:
+ * the product object is stable and there is no local state. Memoising turns 29
+ * re-renders per tap into 0 for the cards that stayed put.
+ */
+export const ProductCard = memo(ProductCardImpl);
 
 export function findProduct(id: string): Product | undefined {
   return products.find((p) => p.id === id);

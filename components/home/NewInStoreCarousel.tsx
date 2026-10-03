@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { products } from '@/data/products';
+import { PRODUCT_LQIP } from '@/data/lqip';
 import { brandMap } from '@/data/brands';
 import { ProductImage } from '@/components/ui/ProductImage';
 import { SectionHeading } from '@/components/ui/SectionHeading';
@@ -39,7 +40,7 @@ export function NewInStoreCarousel() {
             className="pressable block w-[200px] rounded-lg bg-white p-2.5 shadow-[0_1px_8px_rgba(0,0,0,0.05)] md:w-[240px]"
           >
             <div className="relative aspect-[4/5] w-full overflow-hidden rounded-md bg-canvas-alt">
-              <ProductImage src={p.image} alt={p.name} lqip={p.lqip} sizes="240px" className="h-full w-full" />
+              <ProductImage src={p.image} alt={p.name} lqip={PRODUCT_LQIP[p.id]} sizes="240px" className="h-full w-full" />
               <span className="absolute left-2 top-2 rounded-pill bg-ochre-soft px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-ink">
                 New
               </span>

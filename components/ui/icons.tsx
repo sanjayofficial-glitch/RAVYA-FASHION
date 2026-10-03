@@ -15,6 +15,18 @@ const base = (size = 20) => ({
   'aria-hidden': true,
 });
 
+const baseFilled = (size = 20) => ({
+  width: size,
+  height: size,
+  viewBox: '0 0 24 24',
+  fill: 'currentColor',
+  stroke: 'none',
+  'aria-hidden': true,
+  // Omit strokeWidth entirely so SSR and client emit identical attributes.
+  // React drops `strokeWidth: 0`, but Turbopack can briefly cache a stale chunk
+  // that still includes it — removing the key from the object avoids any mismatch.
+});
+
 export function WhatsAppIcon({ className, size }: IconProps) {
   return (
     <svg {...base(size)} className={className} fill="currentColor" stroke="none">
@@ -48,9 +60,28 @@ export function HomeIcon({ className, size }: IconProps) {
   );
 }
 
+export function HomeIconFilled({ className, size }: IconProps) {
+  return (
+    <svg {...baseFilled(size)} className={className}>
+      <path d="m3 10 9-8 9 8v10a2 2 0 0 1-2 2h-4v-7h-6v7H5a2 2 0 0 1-2-2V10Z" />
+    </svg>
+  );
+}
+
 export function ShopIcon({ className, size }: IconProps) {
   return (
     <svg {...base(size)} className={className}>
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <rect x="14" y="14" width="7" height="7" rx="1" />
+    </svg>
+  );
+}
+
+export function ShopIconFilled({ className, size }: IconProps) {
+  return (
+    <svg {...baseFilled(size)} className={className}>
       <rect x="3" y="3" width="7" height="7" rx="1" />
       <rect x="14" y="3" width="7" height="7" rx="1" />
       <rect x="3" y="14" width="7" height="7" rx="1" />
@@ -68,12 +99,31 @@ export function BrandsIcon({ className, size }: IconProps) {
   );
 }
 
+export function BrandsIconFilled({ className, size }: IconProps) {
+  return (
+    <svg {...baseFilled(size)} className={className}>
+      <path d="M20.6 13.4 12 22 2 12V2h10l8.6 8.6a2 2 0 0 1 0 2.8Z" />
+      <circle cx="7.5" cy="7.5" r="1.2" />
+    </svg>
+  );
+}
+
 export function MoreIcon({ className, size }: IconProps) {
   return (
     <svg {...base(size)} className={className}>
       <circle cx="5" cy="12" r="1.4" fill="currentColor" stroke="none" />
       <circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none" />
       <circle cx="19" cy="12" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  );
+}
+
+export function MoreIconFilled({ className, size }: IconProps) {
+  return (
+    <svg {...baseFilled(size)} className={className}>
+      <circle cx="5" cy="12" r="1.6" />
+      <circle cx="12" cy="12" r="1.6" />
+      <circle cx="19" cy="12" r="1.6" />
     </svg>
   );
 }

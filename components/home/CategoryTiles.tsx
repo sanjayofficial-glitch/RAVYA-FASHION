@@ -53,7 +53,12 @@ export function CategoryTiles() {
             href="/shop"
             className="pressable flex aspect-[4/5] flex-col items-start justify-end rounded-lg bg-ink p-4 text-white"
           >
-            <span className="font-display text-2xl font-extrabold uppercase leading-none">All racks</span>
+            <span
+              className="max-w-full font-display font-extrabold uppercase leading-none"
+              style={{ fontSize: "clamp(17px, calc(8vw - 8.5px), 1.5rem)" }}
+            >
+              All racks
+            </span>
             <span className="mt-2 inline-block rounded-pill bg-ochre-soft px-3 py-1 text-xs font-bold uppercase tracking-[0.1em] text-ink">
               Shop all →
             </span>

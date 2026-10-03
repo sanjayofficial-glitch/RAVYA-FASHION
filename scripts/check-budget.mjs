@@ -13,7 +13,7 @@ import path from 'node:path';
 
 const BUDGETS = {
   initialJsCssKB: 180, // heaviest route, gzipped first-load JS + CSS
-  catalogChunkKB: 25,
+  catalogChunkKB: 25, // gzip cost of pulling data/products.ts into a client bundle
 };
 
 function gzipSize(file) {
@@ -29,6 +29,8 @@ async function main() {
     console.error('No app-build-manifest.json. Run `next build` first.');
     process.exit(1);
   }
+
+  let failed = false;
 
   // All CSS files (every route loads them)
   const cssFiles = [];
@@ -53,6 +55,55 @@ async function main() {
   }
   console.log(`Heaviest first-load route: ${worst.route || '/'} ${worst.kb.toFixed(1)}KB gz / ${BUDGETS.initialJsCssKB}KB`);
 
+  // Catalog cost in the *client* bundle. Measured by scanning the emitted
+  // browser chunks for a product-id sentinel and gzipping whatever matches —
+  // the chunk boundary is wherever the bundler put it, so a per-route estimate
+  // would miss a catalog that lives in a chunk shared across several pages.
+  // Server chunks (.next/server/**) are excluded: they never reach the browser,
+  // so counting them would charge the budget for API handlers and RSC payloads.
+  // Before this was enforced, the budget was declared and never checked, and
+  // data/products.ts was free to grow silently (its base64 LQIPs rode along in
+  // it until they were split out into data/lqip.ts).
+  const CATALOG_SENTINEL = /ramraj-cotton-shirt-white/;
+  const catalogChunks = new Set();
+  const walk = async (dir) => {
+    let entries;
+    try {
+      entries = await fs.readdir(dir, { withFileTypes: true });
+    } catch {
+      return;
+    }
+    for (const e of entries) {
+      const abs = path.join(dir, e.name);
+      if (e.isDirectory()) await walk(abs);
+      else if (e.name.endsWith('.js')) {
+        try {
+          if (CATALOG_SENTINEL.test(await fs.readFile(abs, 'utf8'))) catalogChunks.add(abs);
+        } catch {
+          /* binary or unreadable; skip */
+        }
+      }
+    }
+  };
+  await walk(path.join('.next', 'static', 'chunks'));
+
+  let catalogKb = 0;
+  for (const abs of catalogChunks) catalogKb += gzipSize(abs) / 1024;
+  if (catalogChunks.size === 0) {
+    console.warn('WARN: catalog sentinel not found in any chunk — is this check still wired up?');
+  } else {
+    console.log(
+      `Catalog chunk(s): ${catalogChunks.size} file(s), ${catalogKb.toFixed(1)}KB gz / ${BUDGETS.catalogChunkKB}KB`,
+    );
+    if (catalogKb > BUDGETS.catalogChunkKB) {
+      console.error(
+        `FAIL: catalog chunks ${catalogKb.toFixed(1)}KB exceed ${BUDGETS.catalogChunkKB}KB. ` +
+          `Usually data/products.ts or data/lqip.ts growing.`,
+      );
+      failed = true;
+    }
+  }
+
   // Largest product thumb
   let thumb = { name: '', size: 0 };
   try {
@@ -68,7 +119,6 @@ async function main() {
   const hero = await fs.stat('public/products/_hero.avif').catch(() => null);
   if (hero) console.log(`Hero AVIF (LCP): ${(hero.size / 1024).toFixed(1)}KB / 120KB`);
 
-  let failed = false;
   if (worst.kb > BUDGETS.initialJsCssKB) {
     console.error(`FAIL: first-load JS+CSS ${worst.kb.toFixed(1)}KB exceeds ${BUDGETS.initialJsCssKB}KB`);
     failed = true;

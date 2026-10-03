@@ -18,8 +18,8 @@ export function Hero() {
   return (
     <section className="px-3 md:px-6">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-xl bg-white p-4 shadow-[0_20px_50px_rgba(0,104,93,0.06)] sm:p-6 md:p-8 lg:p-12">
-        <div aria-hidden className="pointer-events-none absolute -left-20 -top-32 h-80 w-80 rounded-full bg-pine/10 blur-3xl" />
-        <div aria-hidden className="pointer-events-none absolute -bottom-24 -right-16 h-96 w-96 rounded-full bg-ochre-soft/60 blur-3xl" />
+        <div aria-hidden className="hero-glow pointer-events-none absolute -left-20 -top-32 h-80 w-80 rounded-full bg-pine/10 blur-3xl" />
+        <div aria-hidden className="hero-glow pointer-events-none absolute -bottom-24 -right-16 h-96 w-96 rounded-full bg-ochre-soft/60 blur-3xl" />
         <div className="relative z-10 grid grid-cols-1 items-stretch gap-8 lg:grid-cols-12 lg:gap-10">
           <div className="flex flex-col justify-between gap-6 lg:col-span-6">
             <div className="flex flex-col gap-5">
@@ -82,6 +82,11 @@ export function Hero() {
             </div>
           </div>
           <div className="relative min-h-[420px] overflow-hidden rounded-lg bg-canvas-alt lg:col-span-6">
+            {/* priority stays: on mobile the grid is one column, so the h1 is
+                ~500px tall worth of content above this — the portrait is still
+                partly above the fold and is by far the largest element painted,
+                which makes it the LCP, not the text. min-h reserves its box, so
+                lazy-vs-eager costs no CLS. */}
             <ProductImage
               src={portrait.src}
               alt={portrait.alt}

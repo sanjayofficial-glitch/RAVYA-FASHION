@@ -1,0 +1,1 @@
+{"nodes": [{"id": "app/api/stats/route.ts", "label": "Stats API Route", "type": "file", "source_file": "app/api/stats/route.ts"}, {"id": "stats-get", "label": "Stats GET handler", "type": "function", "source_file": "app/api/stats/route.ts"}], "edges": [], "hyperedges": []}

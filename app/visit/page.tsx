@@ -11,6 +11,7 @@ import { BookingForm } from '@/components/visit/BookingForm';
 
 export const metadata: Metadata = {
   title: 'Visit Us',
+  alternates: { canonical: '/visit' },
   description: 'Address, hours, live open/closed status, GPS directions and WhatsApp for Ravya Fashion, Rourkela.',
 };
 
@@ -20,7 +21,7 @@ export default function VisitPage() {
   const banner = editorial['visit_modern-high-street-boutique-2'];
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
-      <SectionHeading sub="Address, hours and one-tap directions">Visit Us</SectionHeading>
+      <SectionHeading as="h1" sub="Address, hours and one-tap directions">Visit Us</SectionHeading>
       {banner ? (
         <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-xl bg-canvas-alt">
           <ProductImage

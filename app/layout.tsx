@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Syne, Plus_Jakarta_Sans } from 'next/font/google';
+import { Syne } from 'next/font/google';
 import { site } from '@/config/site';
 import { Header } from '@/components/layout/Header';
 import { BottomNav } from '@/components/layout/BottomNav';
@@ -33,22 +33,25 @@ export const viewport: Viewport = {
   themeColor: '#FFFFFF',
 };
 
-const CONSTRAINT_SCRIPT = `var c=navigator.connection||{};var d=document.documentElement;
+const CONSTRAINT_SCRIPT = `var c=navigator.connection||{};var d=document.documentElement;d.dataset.js='true';
 if(c.saveData||/2g/.test(c.effectiveType||''))d.dataset.savedata='true';
 if((navigator.deviceMemory||8)<4)d.dataset.lowmem='true';
 if(matchMedia('(prefers-reduced-motion: reduce)').matches)d.dataset.motion='reduced';`;
 
-const syne = Syne({ subsets: ['latin'], weight: ['700', '800'], variable: '--font-syne', display: 'swap' });
-const jakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  weight: ['400', '500', '700', '800'],
-  variable: '--font-jakarta',
-  display: 'swap',
-});
+// Syne is the brand voice, so it stays for display only — with a reason to
+// override the platform. Body copy runs on the system stack, which is both
+// Apple's default and the reason five fewer font files stop competing with the
+// hero for preload on a 2G first load.
+//
+// Weight 800 only. Every font-display consumer (Header, Footer, BrandStrip,
+// StoreSnapshot, CategoryTiles, brands, about) and both .display-* rules are
+// font-extrabold / 800 — nothing on the site renders Syne at 700, so shipping
+// that weight only cost a file and a preload competing with the hero.
+const syne = Syne({ subsets: ['latin'], weight: ['800'], variable: '--font-syne', display: 'swap' });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en-IN" className={`${syne.variable} ${jakarta.variable}`}>
+    <html lang="en-IN" suppressHydrationWarning className={syne.variable}>
       <head>
         <script dangerouslySetInnerHTML={{ __html: CONSTRAINT_SCRIPT }} />
         {process.env.NODE_ENV !== 'production' && STORE_OPEN_WARN ? (

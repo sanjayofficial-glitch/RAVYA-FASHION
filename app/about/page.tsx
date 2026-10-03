@@ -7,6 +7,7 @@ import { editorial } from '@/data/editorial';
 
 export const metadata: Metadata = {
   title: 'Our Story',
+  alternates: { canonical: '/about' },
   description: 'Why Ravya Fashion exists: accessible luxury for Rourkela — curated brands, honest prices, and a store that treats every customer like a regular.',
 };
 
@@ -36,7 +37,7 @@ export default function AboutPage() {
   const collageB = editorial['about_two-creative-friends-in-2'];
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
-      <SectionHeading sub="Three things you should know about us">Our Story</SectionHeading>
+      <SectionHeading as="h1" sub="Three things you should know about us">Our Story</SectionHeading>
       {(collageA || collageB) && (
         <div className="mb-10 grid gap-3 sm:grid-cols-5">
           {collageA ? (

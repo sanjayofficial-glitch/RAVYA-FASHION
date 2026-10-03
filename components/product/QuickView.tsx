@@ -1,7 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { products } from '@/data/products';
+import { PRODUCT_LQIP } from '@/data/lqip';
 import { brandMap } from '@/data/brands';
 import { formatPrice } from '@/lib/format';
 import { productEnquiry, holdLink } from '@/lib/whatsapp';
@@ -9,19 +10,54 @@ import { track } from '@/lib/track';
 import { ProductImage } from '@/components/ui/ProductImage';
 import { InStoreBadge } from '@/components/ui/Badge';
 import { CloseIcon } from '@/components/ui/icons';
+import { startSpring, type SpringHandle } from '@/hooks/useSpring';
+import { useConstraints } from '@/hooks/useConstraints';
 import type { Product } from '@/data/products';
+
+/** Materialize, don't fade: the dialog grows out of the card that opened it. */
+const SCALE_FROM = 0.92;
+/** Desktop is a modality change, so critically damped — overshoot on something
+ *  that merely appeared reads as wrong. Under 768px it is a sheet, so the
+ *  sheet values apply instead. */
+const DIALOG_SPRING = { damping: 1.0, response: 0.35 };
+const SHEET_SPRING = { damping: 0.8, response: 0.3 };
+
+function isSheetViewport(): boolean {
+  return typeof window !== 'undefined' && window.matchMedia('(max-width: 768px)').matches;
+}
 
 export function QuickView() {
   const [product, setProduct] = useState<Product | null>(null);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const pushGuard = useRef(false);
+  const triggerIdRef = useRef('');
+  const springRef = useRef<SpringHandle | null>(null);
+  const progressRef = useRef(0);
+  const { reducedMotion, savedata } = useConstraints();
+  const plain = reducedMotion || savedata;
+
+  const write = useCallback(
+    (p: number) => {
+      const el = dialogRef.current;
+      if (!el) return;
+      progressRef.current = p;
+      el.style.opacity = String(p);
+      el.style.transform = plain ? 'none' : `scale(${SCALE_FROM + (1 - SCALE_FROM) * p})`;
+    },
+    [plain],
+  );
 
   useEffect(() => {
     const onOpen = (e: Event) => {
       const id = (e as CustomEvent<string>).detail;
       const p = products.find((x) => x.id === id);
       if (!p || !dialogRef.current) return;
+      triggerIdRef.current = id;
       setProduct(p);
+      // Hidden until the layout effect below has measured the rendered dialog
+      // and set the origin, otherwise it is on screen at rest for a frame.
+      dialogRef.current.style.opacity = '0';
+      dialogRef.current.classList.remove('qv-hiding');
       dialogRef.current.showModal();
       if (!pushGuard.current) {
         pushGuard.current = true;
@@ -40,25 +76,82 @@ export function QuickView() {
     };
   }, []);
 
-  const close = () => {
+  // Runs after the product body has committed, so the dialog box is measured at
+  // its real size and the trigger rect is in the same coordinate space.
+  useLayoutEffect(() => {
+    const el = dialogRef.current;
+    if (!product || !el || !el.open) return;
+    const box = el.getBoundingClientRect();
+    const trigger = document.querySelector<HTMLElement>(
+      `[data-flip-id="${CSS.escape(triggerIdRef.current)}"]`,
+    );
+    // getBoundingClientRect reflects the current scroll position, so the
+    // trigger never has to be scrolled into view to be found.
+    if (trigger && box.width > 0) {
+      const t = trigger.getBoundingClientRect();
+      el.style.transformOrigin = `${t.left + t.width * 0.5 - box.left}px ${t.top + t.height * 0.5 - box.top}px`;
+    } else {
+      el.style.transformOrigin = '50% 50%';
+    }
+    const curve = isSheetViewport() ? SHEET_SPRING : DIALOG_SPRING;
+    springRef.current?.stop();
+    const handle = startSpring({
+      from: 0,
+      to: 1,
+      damping: plain ? 1.0 : curve.damping,
+      response: plain ? 0.25 : curve.response,
+      onUpdate: (p) => write(p),
+    });
+    springRef.current = handle;
+    return () => {
+      handle.stop();
+      if (springRef.current === handle) springRef.current = null;
+    };
+  }, [product, write, plain]);
+
+  const close = useCallback(() => {
     const el = dialogRef.current;
     if (!el) return;
-    const reduced = document.documentElement.dataset.motion === 'reduced';
-    if (reduced || !el.open) {
-      el.close();
-      return;
-    }
-    el.classList.add('qv-exit');
-    window.setTimeout(() => {
-      el.classList.remove('qv-exit');
+    springRef.current?.stop();
+    springRef.current = null;
+    if (!el.open) return;
+    el.classList.add('qv-hiding');
+    const curve = isSheetViewport() ? SHEET_SPRING : DIALOG_SPRING;
+    // Mirrored exit: same curve, same target, same mechanism, so the return
+    // path is the entrance path reversed rather than a separate 200ms ease-in.
+    const handle = startSpring({
+      from: progressRef.current,
+      to: 0,
+      damping: plain ? 1.0 : curve.damping,
+      response: plain ? 0.25 : curve.response,
+      onUpdate: (p) => write(p),
+    });
+    handle.finished.then(() => {
+      el.style.transform = '';
+      el.style.opacity = '';
+      el.style.transformOrigin = '';
+      el.classList.remove('qv-hiding');
       if (el.open) el.close();
-    }, 200);
-  };
+    });
+  }, [write, plain]);
 
   return (
     <dialog
       ref={dialogRef}
-      onClose={() => setProduct(null)}
+      onClose={() => {
+        springRef.current?.stop();
+        springRef.current = null;
+        // Never leave a half-finished transform inline on a dialog that is
+        // about to be reused by the next open.
+        const el = dialogRef.current;
+        if (el) {
+          el.style.transform = '';
+          el.style.opacity = '';
+          el.style.transformOrigin = '';
+          el.classList.remove('qv-hiding');
+        }
+        setProduct(null);
+      }}
       onClick={(e) => {
         if (e.target === dialogRef.current) close();
       }}
@@ -108,7 +201,7 @@ function QuickViewBody({ product, onClose }: { product: Product; onClose: () => 
   return (
     <div className="max-h-[85vh] overflow-y-auto">
       <div className="relative aspect-[4/5] w-full bg-canvas-alt">
-        <ProductImage src={product.image} alt={product.name} lqip={product.lqip} sizes="560px" className="h-full w-full" />
+        <ProductImage src={product.image} alt={product.name} lqip={PRODUCT_LQIP[product.id]} sizes="560px" className="h-full w-full" />
         <button
           type="button"
           onClick={onClose}

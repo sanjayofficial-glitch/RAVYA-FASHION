@@ -1,0 +1,1 @@
+{"nodes": [{"id": "app/api/track/route.ts", "label": "Track API Route", "type": "file", "source_file": "app/api/track/route.ts"}, {"id": "track-event", "label": "TrackEvent POST handler", "type": "function", "source_file": "app/api/track/route.ts"}], "edges": [], "hyperedges": []}

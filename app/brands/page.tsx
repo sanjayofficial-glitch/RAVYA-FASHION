@@ -9,13 +9,14 @@ import { ChevronRightIcon } from '@/components/ui/icons';
 
 export const metadata: Metadata = {
   title: 'Our Brands',
+  alternates: { canonical: '/brands' },
   description: 'Ramraj, Killer, Sportiq, Ignite, Jockey and Unibro — the six authorized brand partners stocked at Ravya Fashion, Rourkela.',
 };
 
 export default function BrandsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
-      <SectionHeading sub="Six authorized partners, one roof">Our Brands</SectionHeading>
+      <SectionHeading as="h1" sub="Six authorized partners, one roof">Our Brands</SectionHeading>
       <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {brands.map((b, i) => {
           const img = editorial[`brands_brands-editorial-${(i % 6) + 1}-${(i % 6) + 1}`];

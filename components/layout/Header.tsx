@@ -21,9 +21,19 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 md:px-6">
+      {/* Scroll-edge mask. A hard 1px divider spans the full width whether or
+          not anything is actually scrolling under it; this fades the canvas out
+          only where content meets the floating chrome, and only once there is
+          something to hide. */}
       <div
-        className={`mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 rounded-pill border border-line/70 pl-5 pr-2 transition-[background-color,box-shadow] duration-300 ease-swift ${
-          scrolled ? 'bg-white/85 shadow-lift backdrop-blur-md' : 'bg-white/60 backdrop-blur-sm'
+        aria-hidden
+        className={`pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-canvas via-canvas/90 to-transparent transition-opacity duration-300 ease-swift ${
+          scrolled ? 'opacity-100' : 'opacity-0'
+        }`}
+      />
+      <div
+        className={`relative mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 rounded-pill pl-5 pr-2 transition-[background-color,backdrop-filter] duration-300 ease-swift ${
+          scrolled ? 'bg-white/90 backdrop-blur-lg' : 'bg-white/70 backdrop-blur-sm'
         }`}
       >
         <Link href="/" className="font-display text-base font-extrabold uppercase tracking-wide text-ink" aria-label="Ravya Fashion home">

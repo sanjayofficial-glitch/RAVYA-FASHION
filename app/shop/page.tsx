@@ -12,6 +12,7 @@ import { ActiveFilterChips } from '@/components/shop/ActiveFilterChips';
 
 export const metadata: Metadata = {
   title: 'In-Store Catalog',
+  alternates: { canonical: '/shop' },
   description: 'Browse what is on the racks at Ravya Fashion, Rourkela right now. Filter by category, brand and price tier, then enquire on WhatsApp.',
 };
 

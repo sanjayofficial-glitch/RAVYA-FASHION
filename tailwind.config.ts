@@ -21,18 +21,23 @@ const config: Config = {
         clay: 'rgb(var(--clay) / <alpha-value>)',
       },
       fontFamily: {
+        // Body runs on the platform stack (§15): no webfont download, native
+        // optical sizing and tracking tables, and nothing to reflow inside the
+        // LCP window.
         sans: [
-          'var(--font-jakarta)',
           '-apple-system',
           'BlinkMacSystemFont',
           '"Segoe UI"',
           'Roboto',
+          '"Helvetica Neue"',
+          'Arial',
           'sans-serif',
         ],
         display: [
           'var(--font-syne)',
-          'var(--font-jakarta)',
           '-apple-system',
+          'BlinkMacSystemFont',
+          '"Segoe UI"',
           'sans-serif',
         ],
       },
@@ -45,7 +50,8 @@ const config: Config = {
         lift: '0 8px 24px rgba(26,26,26,0.08)',
       },
       transitionTimingFunction: {
-        swift: 'cubic-bezier(0.22, 1, 0.36, 1)',
+        // Single source of truth, shared with globals.css.
+        swift: 'var(--ease-swift)',
       },
     },
   },

@@ -17,11 +17,18 @@
   --ochre: 142 78 20;
   --ochre-soft: 255 220 196;
   --clay: 160 59 33;
+  /* The one non-spring curve in the system. Both the Tailwind `ease-swift`
+     token and every hand-written animation resolve here, so there is exactly
+     one place a new easing can be introduced from. */
+  --ease-swift: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html {
   -webkit-text-size-adjust: 100%;
   scroll-behavior: smooth;
+  /* Reserve the classic-scrollbar gutter up front so navigating between long
+     and short pages never shifts the layout when the scrollbar appears. */
+  scrollbar-gutter: stable;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -31,6 +38,9 @@ html {
 body {
   @apply bg-canvas text-ink font-sans antialiased;
   text-rendering: optimizeLegibility;
+  /* Variable-font optical sizing. Free with the system stack; needs the
+     `auto` keyword on the webfont display face to do anything. */
+  font-optical-sizing: auto;
 }
 
 ::selection {
@@ -55,20 +65,38 @@ body {
 
 /* ---------- Campaign display (Neo-Editorial Syne, uppercase) ---------- */
 .display-campaign {
-  font-family: var(--font-syne), var(--font-jakarta), -apple-system, 'Segoe UI', sans-serif;
+  font-family: var(--font-syne), -apple-system, 'Segoe UI', sans-serif;
   text-transform: uppercase;
   line-height: 0.95;
-  letter-spacing: -0.01em;
+  /* Large display text is tightened, not left at zero — the default tracking
+     opens up as size grows and reads loose above ~40px. */
+  letter-spacing: -0.02em;
   font-weight: 800;
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
+  font-optical-sizing: auto;
+  /* Cap at 3rem (48px) so the value just under the 1024px boundary is only
+     ~5px larger than the lg value below — the old 4.5rem cap dropped 28.8px
+     (72px -> 43.2px) when the two-column hero kicked in. */
+  font-size: clamp(1.3rem, 8.4vw, 3rem);
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+/* Two-column hero from lg: the headline must fit its col-span-6 column,
+   otherwise it runs under the portrait image (image paints over static text).
+   The clamp continues the vw ramp so size grows smoothly 43.2px -> 52px
+   from 1024px to ~1536px instead of jumping at 1280px. */
+@media (min-width: 1024px) {
+  .display-campaign {
+    font-size: clamp(2.7rem, 3.4vw, 3.25rem);
+  }
 }
 
 .display-section {
-  font-family: var(--font-syne), var(--font-jakarta), -apple-system, 'Segoe UI', sans-serif;
+  font-family: var(--font-syne), -apple-system, 'Segoe UI', sans-serif;
   text-transform: uppercase;
   line-height: 0.95;
-  letter-spacing: 0;
+  letter-spacing: -0.015em;
   font-weight: 800;
+  font-optical-sizing: auto;
   font-size: clamp(1.5rem, 4.5vw, 2.5rem);
 }
 
@@ -130,13 +158,15 @@ body {
   to { transform: translateX(-50%); }
 }
 html[data-savedata='true'] .ticker-track,
-html[data-motion='reduced'] .ticker-track {
+html[data-motion='reduced'] .ticker-track,
+html[data-lowmem='true'] .ticker-track {
   animation: none;
   flex-wrap: wrap;
   width: 100%;
 }
 html[data-savedata='true'] .ticker,
-html[data-motion='reduced'] .ticker {
+html[data-motion='reduced'] .ticker,
+html[data-lowmem='true'] .ticker {
   border: none;
 }
 
@@ -157,20 +187,31 @@ html[data-motion='reduced'] .ticker {
   flex: 0 0 auto;
 }
 
-/* ---------- Reveal (IntersectionObserver adds .is-visible) ---------- */
+/* ---------- Reveal (IntersectionObserver adds .is-visible) ----------
+   The hidden state only applies when html[data-js='true'] (set by
+   CONSTRAINT_SCRIPT in the head before first paint), so with JavaScript
+   disabled the content stays visible instead of being stuck at opacity 0. */
 .reveal {
+  transition:
+    opacity 450ms var(--ease-swift),
+    transform 450ms var(--ease-swift);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+html[data-js='true'] .reveal {
   opacity: 0;
   transform: translateY(8px);
-  transition:
-    opacity 450ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 450ms cubic-bezier(0.22, 1, 0.36, 1);
-  transition-delay: var(--reveal-delay, 0ms);
+}
+/* will-change is scoped to .will-reveal, which Reveal.tsx adds the moment the
+   IntersectionObserver fires and drops again once the element's own computed
+   transition has elapsed. A permanent will-change here means one compositor
+   layer per reveal element for the whole page lifetime — the wrong trade on
+   the low-end devices this site targets. */
+html[data-js='true']:not([data-lowmem='true']) .reveal.will-reveal {
   will-change: opacity, transform;
 }
-.reveal.is-visible {
+html[data-js='true'] .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
-  will-change: auto;
 }
 html[data-motion='reduced'] .reveal,
 html[data-savedata='true'] .reveal {
@@ -194,51 +235,29 @@ html[data-savedata='true'] .reveal {
   animation: shimmer 1.4s infinite;
 }
 html[data-motion='reduced'] .skeleton::after,
-html[data-savedata='true'] .skeleton::after {
+html[data-savedata='true'] .skeleton::after,
+html[data-lowmem='true'] .skeleton::after {
   animation: none;
+}
+html[data-lowmem='true'] .hero-glow,
+html[data-motion='reduced'] .hero-glow {
+  display: none;
 }
 @keyframes shimmer {
   100% { transform: translateX(100%); }
 }
 
-/* ---------- LQIP blur-up ---------- */
-.lqip-img {
-  transition: filter 500ms ease, opacity 500ms ease;
-}
-.lqip-img[data-loaded='false'] {
-  filter: blur(12px);
-  transform: scale(1.02);
-}
-.lqip-img[data-loaded='true'] {
-  filter: blur(0);
-  transform: scale(1);
-}
-
-/* ---------- FAB pulse ---------- */
-@keyframes fab-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-}
-.fab-pulse {
-  animation: fab-pulse 4s ease-in-out infinite;
-}
-html[data-motion='reduced'] .fab-pulse {
-  animation: none;
-}
-
-/* ---------- Dialog (Quick View) ---------- */
+/* ---------- Dialog (Quick View) ----------
+   The dialog's own opacity/scale is driven by a spring in QuickView.tsx so it
+   can materialize from the card that opened it. ::backdrop is not reachable
+   from script, so the scrim is a CSS opacity transition on the same curve. */
 dialog.qv::backdrop {
   background: rgb(17 17 17 / 0.5);
+  opacity: 1;
+  transition: opacity 280ms var(--ease-swift);
 }
-dialog.qv[open] {
-  animation: qv-in 300ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-@keyframes qv-in {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-html[data-motion='reduced'] dialog.qv[open] {
-  animation: none;
+dialog.qv.qv-hiding::backdrop {
+  opacity: 0;
 }
 @media (max-width: 768px) {
   dialog.qv {
@@ -254,41 +273,11 @@ html[data-motion='reduced'] dialog.qv[open] {
   padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
 }
 
-/* ---------- Sheet enter/exit (MoreSheet) ---------- */
-@keyframes sheet-in {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
-}
-.sheet-in {
-  animation: sheet-in 300ms cubic-bezier(0.22, 1, 0.36, 1);
-}
-.sheet-exit {
-  transform: translateY(100%) !important;
-  transition: transform 250ms cubic-bezier(0.32, 0.72, 0, 1);
-}
-html[data-motion='reduced'] .sheet-in {
-  animation: none;
-}
-html[data-motion='reduced'] .sheet-exit,
-html[data-savedata='true'] .sheet-exit {
-  transition: opacity 150ms ease-out;
-  transform: none !important;
-  opacity: 0;
-}
-
-/* ---------- Quick View exit ---------- */
-dialog.qv.qv-exit {
-  animation: qv-out 200ms ease-in forwards;
-}
-dialog.qv.qv-exit::backdrop {
-  animation: qv-backdrop-out 200ms ease-in forwards;
-}
-@keyframes qv-out {
-  to { opacity: 0; transform: translateY(24px); }
-}
-@keyframes qv-backdrop-out {
-  to { opacity: 0; }
-}
+/* ---------- MoreSheet ----------
+   Enter/exit are spring-driven from the panel transform, not keyframes — the
+   drag gesture has to be able to take the panel over mid-flight, and two
+   writers on one transform is exactly the bug this replaces. The reduced-motion
+   and save-data paths cross-fade on opacity alone, selected by the hook. */
 
 /* ---------- Rise-in (empty state) ---------- */
 @keyframes rise-in {
@@ -296,7 +285,7 @@ dialog.qv.qv-exit::backdrop {
   to { opacity: 1; transform: translateY(0); }
 }
 .enter-rise {
-  animation: rise-in 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: rise-in 300ms var(--ease-swift) both;
 }
 html[data-motion='reduced'] .enter-rise,
 html[data-savedata='true'] .enter-rise {
@@ -305,4 +294,46 @@ html[data-savedata='true'] .enter-rise {
 @keyframes rise-in-fade {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* ---------- Additional user preference signals ----------
+   `prefers-reduced-motion` is only one of three; the other two are honoured
+   here rather than in JS, because every one of the surfaces below is already
+   expressed in CSS. The attribute selectors match the frosted surfaces (all of
+   them carry both a `backdrop-blur-*` class and a translucent `bg-white/*`),
+   so one rule covers the header, the bottom nav and every pill overlay. */
+
+@media (prefers-reduced-transparency: reduce) {
+  [class*='backdrop-blur-'],
+  [class*='backdrop-blur-']::before,
+  [class*='backdrop-blur-']::after {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  /* Blur was doing the contrast work; without it the fill has to be opaque. */
+  [class*='backdrop-blur-'][class*='bg-white/'] {
+    background-color: rgb(var(--canvas)) !important;
+  }
+}
+
+@media (prefers-contrast: more) {
+  /* Muted ink and hairlines are the first things to fail at high contrast. */
+  :root {
+    --ink-2: 24 28 27;
+    --line: 130 142 139;
+  }
+  [class*='backdrop-blur-'] {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+  [class*='backdrop-blur-'][class*='bg-white/'] {
+    background-color: #fff !important;
+    /* Inset ring instead of a border: a defined edge with no layout shift. */
+    box-shadow: inset 0 0 0 1px rgb(var(--ink));
+  }
+  .btn-ghost,
+  .pill,
+  [class*='rounded-pill'][class*='border'] {
+    border-color: rgb(var(--ink));
+  }
 }

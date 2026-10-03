@@ -14,6 +14,7 @@ interface ProductImageProps {
 
 /**
  * LQIP blur-up image with a branded ivory SVG fallback — never a broken-image icon.
+ * placeholder="blur" on next/image is the single blur-up mechanism.
  */
 export function ProductImage({
   src,
@@ -23,7 +24,6 @@ export function ProductImage({
   sizes = '(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw',
   priority = false,
 }: ProductImageProps) {
-  const [loaded, setLoaded] = useState(false);
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -45,12 +45,6 @@ export function ProductImage({
 
   const hasLqip = Boolean(lqip) && lqip !== 'PLACEHOLDER_LQIP';
 
-  const lqipLayer =
-    !loaded && hasLqip ? (
-      // eslint-disable-next-line @next/next/no-img-element -- base64 LQIP placeholder; next/image cannot render data URIs
-      <img src={lqip} alt="" aria-hidden className="absolute inset-0 h-full w-full scale-[1.02] object-cover blur-lg" />
-    ) : null;
-
   return (
     <div className={`relative overflow-hidden bg-canvas-alt ${className}`}>
       <Image
@@ -59,14 +53,11 @@ export function ProductImage({
         fill
         sizes={sizes}
         priority={priority}
-        className={`lqip-img object-cover ${loaded ? '' : 'opacity-0'}`}
-        data-loaded={loaded}
-        onLoad={() => setLoaded(true)}
+        className="object-cover"
         onError={() => setFailed(true)}
         placeholder={hasLqip ? 'blur' : 'empty'}
         blurDataURL={hasLqip ? lqip : undefined}
       />
-      {lqipLayer}
     </div>
   );
 }
