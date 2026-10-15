@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { brands } from '@/data/brands';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
+import { ProductImage } from '@/components/ui/ProductImage';
 
 const STICKER = [
   'bg-accent/10 text-accent-ink',
@@ -21,8 +22,16 @@ export function BrandStrip() {
             <Reveal as="li" key={b.id} delay={(i % 6) * 50}>
               <Link
                 href={`/shop?brand=${b.id}`}
-                className="pressable flex min-h-[88px] flex-col items-center justify-center gap-1.5 rounded-lg bg-canvas px-3 py-3 text-center"
+                className="pressable group flex min-h-[120px] flex-col items-center justify-center gap-1.5 rounded-lg bg-canvas px-3 py-3 text-center"
               >
+                <div className="relative h-10 w-10 overflow-hidden rounded-full">
+                  <ProductImage
+                    src={b.image}
+                    alt={`${b.name} brand`}
+                    sizes="40px"
+                    className="h-full w-full"
+                  />
+                </div>
                 <span className="font-display text-base font-extrabold uppercase tracking-wide text-ink">{b.name}</span>
                 <span className={`rounded-pill px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wider ${STICKER[i % STICKER.length]}`}>
                   {b.origin}

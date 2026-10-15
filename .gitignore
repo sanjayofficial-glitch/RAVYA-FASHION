@@ -6,5 +6,12 @@ raw/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
+_unused-assets/
 
-.vercel
+# Raw source images — optimized derivatives live in public/ (like raw/ above).
+ravya-fashion-brand-images/
+shop_product_images_29/
+
+# Stray root-level photos, unreferenced by the app.
+IMG_20260926_150520.jpg
+Vibrant Rooftop Summer Portrait.png

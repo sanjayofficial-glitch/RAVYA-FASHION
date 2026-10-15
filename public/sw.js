@@ -1,5 +1,8 @@
-/* Ravya Fashion service worker — offline shell + catalog cache. */
-const VERSION = 'rf-v2';
+/* Ravya Fashion service worker — offline shell + catalog cache.
+ * Production only: the app registers this in production builds and unregisters
+ * it in dev sessions. Cache-first is safe for content-hashed prod assets, but
+ * NOT for dev chunks (stable URLs for changed code) — never register it there. */
+const VERSION = 'rf-v3';
 const SHELL = ['/', '/manifest.json'];
 /** Hard cap on cached build assets. Hashed filenames never expire on their own,
  *  so without this the cache only ever grows and evicts itself by storage pressure. */

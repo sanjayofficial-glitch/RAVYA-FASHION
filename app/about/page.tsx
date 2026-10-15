@@ -4,12 +4,15 @@ import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Reveal } from '@/components/ui/Reveal';
 import { ProductImage } from '@/components/ui/ProductImage';
 import { editorial } from '@/data/editorial';
+import { JsonLd } from '@/components/ui/JsonLd';
+import { generateBreadcrumbJsonLd, pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: 'Our Story',
-  alternates: { canonical: '/about' },
-  description: 'Why Ravya Fashion exists: accessible luxury for Rourkela — curated brands, honest prices, and a store that treats every customer like a regular.',
-};
+  path: '/about',
+  description:
+    'Why Ravya Fashion exists: accessible luxury for Rourkela — curated brands, honest prices, and a store that treats every customer like a regular.',
+});
 
 const CHAPTERS = [
   {
@@ -37,6 +40,12 @@ export default function AboutPage() {
   const collageB = editorial['about_two-creative-friends-in-2'];
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
+      <JsonLd
+        data={generateBreadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Our Story', path: '/about' },
+        ])}
+      />
       <SectionHeading as="h1" sub="Three things you should know about us">Our Story</SectionHeading>
       {(collageA || collageB) && (
         <div className="mb-10 grid gap-3 sm:grid-cols-5">

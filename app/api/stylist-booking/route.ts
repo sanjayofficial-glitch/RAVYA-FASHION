@@ -63,10 +63,12 @@ export async function POST(req: NextRequest) {
   const booking: Booking = { id: bookingId(), name, phone, date, slot, focus, notified: false };
 
   let mode: 'upstash' | 'memory' = 'memory';
+  let stored = false;
   try {
     if (!upstashCreds()) {
       memoryBookings.push(booking);
       if (memoryBookings.length > 500) memoryBookings.shift();
+      stored = true;
     } else {
       await upstashPipeline([
         ['RPUSH', 'rf:bookings', JSON.stringify(booking)],
@@ -74,9 +76,20 @@ export async function POST(req: NextRequest) {
         ['EXPIRE', 'rf:bookings', String(90 * 86400)],
       ]);
       mode = 'upstash';
+      stored = true;
     }
   } catch {
-    memoryBookings.push(booking);
+    // Only attempt memory storage if Upstash fails and there are available slots
+    if (memoryBookings.length < 500) {
+      memoryBookings.push(booking);
+      stored = true;
+    } else {
+      console.error('[stylist-booking] Storage failed: both Upstash and memory storage unavailable');
+    }
+  }
+  
+  if (!stored) {
+    return NextResponse.json({ ok: false, error: 'storage_unavailable' }, { status: 503 });
   }
 
   if (notifyConfigured()) {
@@ -84,6 +97,18 @@ export async function POST(req: NextRequest) {
       phone,
       `Ravya Fashion: hi ${name}, your private fitting is booked for ${date} (${slot}). Focus: ${focus}. Booking ${booking.id}. Valet parking available at our Sector 5 store — see you soon!`,
     );
+  }
+
+  // Track booking creation for analytics
+  try {
+    await fetch(new URL('/api/track', req.url), {
+      method: 'POST',
+      body: JSON.stringify({ event: 'booking_created', bookingId: booking.id, name, phone, date, slot, focus, mode }),
+      headers: { 'Content-Type': 'application/json' },
+      cache: 'no-store',
+    });
+  } catch {
+    console.warn(`[stylist-booking] Failed to track booking_created for booking ${booking.id}`);
   }
 
   return NextResponse.json({ ok: true, booking, mode });

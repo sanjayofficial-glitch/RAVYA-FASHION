@@ -1,18 +1,27 @@
 import Link from 'next/link';
 import { categories } from '@/data/products';
-import { editorial } from '@/data/editorial';
 import { ProductImage } from '@/components/ui/ProductImage';
 import { Reveal } from '@/components/ui/Reveal';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 
 const MOOD_IMAGE: Record<string, string> = {
-  casual: 'home_young-man-in-relaxed-6',
-  formal: 'home_chic-business-casual-indian-7',
-  party: 'home_expressive-party-fashion-with-8',
-  denim: 'home_high-contrast-shot-of-9',
-  activewear: 'home_athletic-young-runner-wearing-10',
-  outerwear: 'home_model-posing-in-contemporary-12',
-  essentials: 'home_traditional-refined-indian-handloom-11',
+  casual: '/moods/mood_casual.avif',
+  formal: '/moods/mood_formal.avif',
+  party: '/moods/mood_party.avif',
+  denim: '/moods/mood_denim.avif',
+  activewear: '/moods/mood_activewear.avif',
+  outerwear: '/moods/mood_outerwear.avif',
+  essentials: '/moods/mood_essentials.avif',
+};
+
+const MOOD_ALT: Record<string, string> = {
+  casual: 'Casual wear — relaxed everyday fashion',
+  formal: 'Formal wear — crisp business and occasion wear',
+  party: 'Party wear — statement outfits for nights out',
+  denim: 'Denim — jackets, jeans and street style',
+  activewear: 'Activewear — training and performance gear',
+  outerwear: 'Outerwear — layers, jackets and windcheaters',
+  essentials: 'Essentials — innerwear, basics and everyday comfort',
 };
 
 export function CategoryTiles() {
@@ -24,18 +33,15 @@ export function CategoryTiles() {
         </SectionHeading>
       </Reveal>
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {categories.map((c, i) => {
-          const img = editorial[MOOD_IMAGE[c.id]!]!;
-          return (
+        {categories.map((c, i) => (
             <Reveal as="li" key={c.id} delay={(i % 4) * 50}>
               <Link
                 href={`/shop?cat=${c.id}`}
                 className="pressable group relative block aspect-[4/5] overflow-hidden rounded-lg bg-canvas-alt"
               >
                 <ProductImage
-                  src={img.src}
-                  alt={`${c.label} mood — ${img.alt}`}
-                  lqip={img.lqip}
+                  src={MOOD_IMAGE[c.id]!}
+                  alt={MOOD_ALT[c.id]!}
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
                   className="absolute inset-0 h-full w-full transition-transform duration-500 group-hover:scale-105"
                 />
@@ -46,8 +52,7 @@ export function CategoryTiles() {
                 </span>
               </Link>
             </Reveal>
-          );
-        })}
+        ))}
         <Reveal as="li" delay={200}>
           <Link
             href="/shop"

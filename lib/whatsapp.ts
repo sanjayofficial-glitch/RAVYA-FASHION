@@ -1,5 +1,4 @@
 import { site } from '@/config/site';
-import { formatPrice } from './format';
 import type { Product } from '@/data/products';
 
 export function waNumber(): string {
@@ -11,8 +10,14 @@ export function waLink(message: string): string {
 }
 
 export function productEnquiry(p: Product): string {
+  const sizes = p.sizes.join(', ');
+  const colors = p.colors ? ` — Colours: ${p.colors.join(', ')}` : '';
   return waLink(
-    `Hi Ravya Fashion! I'm interested in ${p.name} (${formatPrice(p.price, p.priceTo)}). Is it available in my size at the Rourkela store?`,
+    `Hi Ravya Fashion! I'm interested in the following product:\n\n` +
+    `Product: ${p.name}\n` +
+    `Brand: ${p.brand}\n` +
+    `Sizes: ${sizes}${colors}\n\n` +
+    `I'd like to know the price and availability at your Rourkela store.`,
   );
 }
 
@@ -28,7 +33,6 @@ export function generalEnquiry(): string {
 export function holdMessage(p: Product, size?: string, rack?: string): string {
   const spec: string[] = [];
   if (size) spec.push(`Size ${size}`);
-  spec.push(formatPrice(p.price, p.priceTo));
   if (rack) spec.push(`Rack #${rack}`);
   return (
     `Hi Ravya Fashion! I want to hold the ${p.name} (${spec.join(', ')}) ` +

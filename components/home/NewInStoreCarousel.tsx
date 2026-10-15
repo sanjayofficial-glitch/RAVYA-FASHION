@@ -7,7 +7,7 @@ import { brandMap } from '@/data/brands';
 import { ProductImage } from '@/components/ui/ProductImage';
 import { SectionHeading } from '@/components/ui/SectionHeading';
 import { useConstraints } from '@/hooks/useConstraints';
-import { formatPrice } from '@/lib/format';
+
 
 export function NewInStoreCarousel() {
   const { lowmem, reducedMotion, savedata } = useConstraints();
@@ -49,7 +49,7 @@ export function NewInStoreCarousel() {
               {brandMap[p.brand]?.name ?? p.brand}
             </p>
             <p className="px-1 text-[13px] font-semibold leading-snug text-ink">{p.name}</p>
-            <p className="px-1 pb-1 text-[13px] text-ink-2">{formatPrice(p.price, p.priceTo)}</p>
+            <p className="px-1 pb-1 text-[13px] text-ink-2">Tap to enquire on WhatsApp</p>
           </a>
         ))}
       </div>

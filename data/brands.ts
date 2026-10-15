@@ -1,4 +1,4 @@
-export type BrandId = 'ramraj' | 'killer' | 'sportiq' | 'ignite' | 'jockey' | 'unibro' | 'ravya';
+export type BrandId = 'ramraj' | 'killer' | 'sparky' | 'ignite' | 'jockey' | 'unibro' | 'ravya';
 
 export interface Brand {
   id: BrandId;
@@ -6,9 +6,14 @@ export interface Brand {
   origin: string;
   blurb: string;
   categories: string[];
+  /** High-quality brand card image — partner cards only. */
+  image: string;
   /** Optional owner-supplied logo override: /brands/<id>.svg */
   logo?: string;
 }
+
+/** In-house label — shown by name only, no partner card image. */
+type InHouseBrand = Omit<Brand, 'image'>;
 
 export const brands: Brand[] = [
   {
@@ -17,6 +22,7 @@ export const brands: Brand[] = [
     origin: 'Tiruppur, TN',
     blurb: 'The dhoti and cotton specialist. Everyday comfort with a formal spine.',
     categories: ['Essentials', 'Formal'],
+    image: '/brands/brand_ramraj.avif',
   },
   {
     id: 'killer',
@@ -24,13 +30,15 @@ export const brands: Brand[] = [
     origin: 'Bengaluru',
     blurb: 'Denim-first street attitude — jeans, jackets and bold casuals.',
     categories: ['Denim', 'Casual'],
+    image: '/brands/brand_killer.avif',
   },
   {
-    id: 'sportiq',
-    name: 'Sportiq',
+    id: 'sparky',
+    name: 'Sparky',
     origin: 'India',
     blurb: 'Performance-minded activewear built for daily training.',
     categories: ['Activewear', 'Essentials'],
+    image: '/brands/brand_sparky.avif',
   },
   {
     id: 'ignite',
@@ -38,6 +46,7 @@ export const brands: Brand[] = [
     origin: 'India',
     blurb: 'Party-ready shirts and statement casuals at sharp prices.',
     categories: ['Party', 'Casual'],
+    image: '/brands/brand_ignite.avif',
   },
   {
     id: 'jockey',
@@ -45,6 +54,7 @@ export const brands: Brand[] = [
     origin: 'USA / India',
     blurb: 'Innerwear and essentials with a fit for everybody.',
     categories: ['Essentials', 'Activewear'],
+    image: '/brands/brand_jockey.avif',
   },
   {
     id: 'unibro',
@@ -52,11 +62,12 @@ export const brands: Brand[] = [
     origin: 'India',
     blurb: 'Innerwear, loungewear and everyday basics done honestly.',
     categories: ['Essentials', 'Casual'],
+    image: '/brands/brand_unibro.avif',
   },
 ];
 
 // Ravya is the in-house label (not a partner card), but its products need a display name.
-const inHouseBrand: Brand = {
+const inHouseBrand: InHouseBrand = {
   id: 'ravya',
   name: 'Ravya',
   origin: 'In-house',
@@ -64,6 +75,6 @@ const inHouseBrand: Brand = {
   categories: ['Formal', 'Party'],
 };
 
-export const brandMap: Record<BrandId, Brand> = Object.fromEntries(
+export const brandMap: Record<BrandId, Brand | InHouseBrand> = Object.fromEntries(
   [...brands, inHouseBrand].map((b) => [b.id, b]),
-) as Record<BrandId, Brand>;
+) as Record<BrandId, Brand | InHouseBrand>;

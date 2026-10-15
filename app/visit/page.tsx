@@ -8,19 +8,28 @@ import { HoursTable } from '@/components/visit/HoursTable';
 import { DirectionsButton } from '@/components/visit/DirectionsButton';
 import { VisitActions } from '@/components/visit/VisitActions';
 import { BookingForm } from '@/components/visit/BookingForm';
+import { JsonLd } from '@/components/ui/JsonLd';
+import { generateBreadcrumbJsonLd, pageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Visit Us',
-  alternates: { canonical: '/visit' },
-  description: 'Address, hours, live open/closed status, GPS directions and WhatsApp for Ravya Fashion, Rourkela.',
-};
+export const metadata: Metadata = pageMetadata({
+  title: 'Visit Us — Address, Hours & Directions',
+  path: '/visit',
+  description:
+    'Address, hours, live open/closed status, GPS directions and WhatsApp — find Ravya Fashion in Udit Nagar, Rourkela.',
+});
 
 const AMENITIES = ['Private fitting suites', 'Garment steam', '30-min master tailor', 'Valet parking'];
 
 export default function VisitPage() {
-  const banner = editorial['visit_modern-high-street-boutique-2'];
+  const banner = editorial['visit_ravya-showroom-interior'];
   return (
     <div className="mx-auto max-w-6xl px-4 py-10 md:px-8">
+      <JsonLd
+        data={generateBreadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Visit Us', path: '/visit' },
+        ])}
+      />
       <SectionHeading as="h1" sub="Address, hours and one-tap directions">Visit Us</SectionHeading>
       {banner ? (
         <div className="relative mb-8 aspect-[21/9] overflow-hidden rounded-xl bg-canvas-alt">

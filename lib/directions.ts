@@ -23,8 +23,4 @@ export function mapEmbedUrl(): string {
   return `https://www.google.com/maps?q=${encodeURIComponent(site.PLACEHOLDER_ADDRESS)}&z=15&output=embed`;
 }
 
-export function staticMapThumbUrl(): string {
-  // Static map APIs need keys; we render a branded CSS placeholder instead
-  // and load the interactive embed only on tap. Kept for future swap-in.
-  return '';
-}
+

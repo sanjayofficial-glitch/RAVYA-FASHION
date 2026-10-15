@@ -26,8 +26,6 @@ export function ProductGrid() {
   // on the cards below even when the filter has not changed.
   const items = useMemo(() => {
     const list = filterProducts(products, { cat, brand, tier });
-    if (sort === 'price-asc') return [...list].sort((a, b) => a.price - b.price);
-    if (sort === 'price-desc') return [...list].sort((a, b) => b.price - a.price);
     if (sort === 'new') return [...list].sort((a, b) => Number(b.isNew ?? false) - Number(a.isNew ?? false));
     return list;
   }, [cat, brand, tier, sort]);

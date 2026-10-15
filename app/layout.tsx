@@ -7,21 +7,41 @@ import MoreSheet from '@/components/layout/MoreSheet';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppFab } from '@/components/layout/WhatsAppFab';
 import { ServiceWorker } from '@/components/layout/ServiceWorker';
-import { generateLocalBusinessJsonLd } from '@/lib/seo';
+import { JsonLd } from '@/components/ui/JsonLd';
+import { generateStoreJsonLd, generateWebSiteJsonLd } from '@/lib/seo';
 import { STORE_OPEN_WARN } from '@/config/site';
 import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name}: Curated Style for Rourkela`,
+    default: `${site.name} — Clothing Store in Rourkela`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
+  manifest: '/manifest.json',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
   openGraph: {
     type: 'website',
     siteName: site.name,
-    title: `${site.name}: Curated Style for Rourkela`,
+    locale: 'en_IN',
+    url: site.url,
+    title: `${site.name} — Clothing Store in Rourkela`,
+    description: site.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${site.name} — Clothing Store in Rourkela`,
     description: site.description,
   },
 };
@@ -76,10 +96,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <MoreSheet />
         <WhatsAppFab />
         <ServiceWorker />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateLocalBusinessJsonLd()) }}
-        />
+        <JsonLd data={generateStoreJsonLd()} />
+        <JsonLd data={generateWebSiteJsonLd()} />
       </body>
     </html>
   );

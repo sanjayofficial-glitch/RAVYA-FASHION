@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import { products, categories, tiers } from '@/data/products';
+import { products, categories } from '@/data/products';
 import { brands } from '@/data/brands';
 import { filterProducts, tierOf } from '@/lib/filter';
 import { track } from '@/lib/track';
@@ -74,7 +74,6 @@ export function FilterGroups({ onNavigate }: { onNavigate?: () => void }) {
     <>
       {group('Category', 'cat', categories, cat)}
       {group('Brand', 'brand', brands.map((b) => ({ id: b.id, label: b.name })), brand)}
-      {group('Price', 'tier', tiers, tier)}
     </>
   );
 }

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { products } from '@/data/products';
 import { brandMap } from '@/data/brands';
-import { formatPrice } from '@/lib/format';
+
 import { track } from '@/lib/track';
 import type { InventoryEntry, InventoryStatus } from '@/lib/inventory';
 
@@ -141,7 +141,7 @@ export function StaffDashboard() {
                   </p>
                   <p className="font-semibold text-ink">{p.name}</p>
                 </div>
-                <p className="text-sm font-semibold text-ink">{formatPrice(p.price, p.priceTo)}</p>
+
               </div>
               <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label={`Status for ${p.name}`}>
                 {STATUS_META.map((s) => (

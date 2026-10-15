@@ -4,7 +4,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react
 import { products } from '@/data/products';
 import { PRODUCT_LQIP } from '@/data/lqip';
 import { brandMap } from '@/data/brands';
-import { formatPrice } from '@/lib/format';
+
 import { productEnquiry, holdLink } from '@/lib/whatsapp';
 import { track } from '@/lib/track';
 import { ProductImage } from '@/components/ui/ProductImage';
@@ -214,7 +214,7 @@ function QuickViewBody({ product, onClose }: { product: Product; onClose: () => 
       <div className="p-5 md:p-6">
         <p className="text-[10px] font-medium uppercase tracking-[0.14em] text-ink-2">{brand?.name ?? product.brand}</p>
         <h2 className="mt-1 text-xl font-semibold text-ink">{product.name}</h2>
-        <p className="mt-1 text-lg font-semibold text-ink">{formatPrice(product.price, product.priceTo)}</p>
+        <p className="mt-1 text-sm text-ink-2">Price available on request — enquire on WhatsApp</p>
         <div className="mt-2">
           <InStoreBadge />
         </div>

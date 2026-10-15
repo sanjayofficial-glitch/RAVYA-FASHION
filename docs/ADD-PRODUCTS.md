@@ -8,7 +8,7 @@ All inventory lives in `data/products.ts`. No component changes needed.
 |---|---|---|
 | `id` | string | Unique slug, used for FLIP keys & Quick View. Pattern `brand-name-##`. |
 | `name` | string | Shown on cards + in the WhatsApp prefill. |
-| `brand` | BrandId | `ramraj \| killer \| sportiq \| ignite \| jockey \| unibro \| ravya` |
+| `brand` | BrandId | `ramraj \| killer \| sparky \| ignite \| jockey \| unibro \| ravya` |
 | `category` | Category | `casual \| formal \| party \| denim \| activewear \| outerwear \| essentials` |
 | `price` | number | INR. Tier derives from this: <999 budget, 999–2499 mid, >2499 premium. |
 | `priceTo?` | number | Optional upper bound → renders "₹1,299–1,799". |

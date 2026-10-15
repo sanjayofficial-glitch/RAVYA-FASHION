@@ -30,7 +30,7 @@ export default async function OgImage() {
           </div>
         </div>
         <div style={{ display: 'flex', fontSize: 30, color: '#6B6B6B' }}>
-          Curated in-store fashion · Ramraj · Killer · Sportiq · Ignite · Jockey · Unibro
+          Curated in-store fashion · Ramraj · Killer · Sparky · Ignite · Jockey · Unibro
         </div>
       </div>
     ),

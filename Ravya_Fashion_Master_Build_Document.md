@@ -58,10 +58,10 @@ PAGES & FLOW (5 routes + modal)
    Directions]) → brand/value ticker (auto-scrolling, pauses on touch) →
    6 category tiles + Essentials tile (7 tiles, staggered reveal) →
    "New This Week" horizontal snap carousel (in-store items) →
-   brand partner logos strip (Ramraj, Killer, Sportiq, Ignite, Jockey,
+   brand partner logos strip (Ramraj, Killer, Sparky, Ignite, Jockey,
    Unibro) → store snapshot card (map thumbnail, hours, Open-Now status,
    directions CTA) → footer.
-2. /shop (CATALOG): Sticky pill filter bar (Category / Brand / Price tier:
+2. /shop (CATALOG): Sticky pill filter bar (Category / Brand) → responsive
    Budget · Mid · Premium) → responsive product grid (2 col mobile, 3–4
    desktop) → product cards: high-res photo w/ LQIP, name, brand, price or
    price-range, [IN-STORE: ROURKELA] live badge, dual buttons [Quick View]

@@ -18,9 +18,9 @@ export const editorial: Record<string, EditorialImage> = {
     "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAkABUB8JZQAAujdOugmEAD+bPClT788B6RSVwSQdmVU8GCyhOcq8WBB22k54DS/m7AoYIBvQAAA"
   },
   "home_macro-closeup-portrait-of-4": {
-    "src": "/editorial/home_macro-closeup-portrait-of-4.jpg",
-    "alt": "Macro close-up portrait of model wearing colorful statement sunglasses with vibrant reflection, editorial styling",
-    "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoQAAkABUB8JbACdAD2By0qgYAA/kjCV5lU7vvPxHhuGr9wadCunBFa00MNKoPIBmjsecKunjr6sMX86LwPsyxp1sae/fE2GBGAAA=="
+    "src": "/editorial/hero-portrait.avif",
+    "alt": "Vibrant rooftop summer portrait — Ravya Fashion editorial",
+    "lqip": ""
   },
   "home_home-editorial-5-5": {
     "src": "/editorial/home_home-editorial-5-5.jpg",
@@ -67,9 +67,9 @@ export const editorial: Record<string, EditorialImage> = {
     "alt": "Studio product model wearing premium Ramraj ivory gold-bordered wedding dhoti and silk blend kurta combo with elegant posture",
     "lqip": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAADQAQCdASoQAAkABUB8JZQCdADdGIxBgAD+7V/dvjlsPJr6sdvdALcgAAA="
   },
-  "home_model-in-sportiq-seamless-14": {
-    "src": "/editorial/home_model-in-sportiq-seamless-14.jpg",
-    "alt": "Model in Sportiq seamless training joggers with reflective accents and technical mesh ventilation panels",
+  "home_model-in-sparky-seamless-14": {
+    "src": "/editorial/home_model-in-sparky-seamless-14.jpg",
+    "alt": "Model in Sparky seamless training joggers with reflective accents and technical mesh ventilation panels",
     "lqip": "data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAACwAQCdASoQAAkABUB8JZwAAlunvpAAAP7rEwZB/u+zHJF1OTCfrnmCs21EN935kLx1XXmyZqpoAA=="
   },
   "home_model-wearing-relaxedfit-vintage-15": {
@@ -171,5 +171,10 @@ export const editorial: Record<string, EditorialImage> = {
     "src": "/editorial/visit_vip-fitting-lounge-with-4.jpg",
     "alt": "VIP fitting lounge with plush velvet armchair, warm architectural backlight mirrors, and complimentary espresso service corner",
     "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoQAAkABUB8JQBOgCMDk13RMAAA/lo7zXGvuHX4gBQFn9cifRViuAq0PfQutyY9kZquoOTgtVxcrDJenp0hIAAA"
+  },
+  "visit_ravya-showroom-interior": {
+    "src": "/editorial/visit_ravya-showroom-interior.jpg",
+    "alt": "The Ravya Fashion showroom floor in Rourkela: a lit display wall of folded garments in glass cubbies above counters stacked with Jockey, Marks & Linen and integriti packs",
+    "lqip": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAABwAQCdASoQAAcABUB8JZQAAOqGAADOGlDI7y6kW/aSzA5EWl9v1wdyp4n8+eqlR2g2JlSKWIVMMRLgAAA="
   }
 };

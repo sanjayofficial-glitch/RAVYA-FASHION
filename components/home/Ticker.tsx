@@ -4,7 +4,7 @@ const ITEMS = [
   '100% In-Store Verified',
   'Authorized: Ramraj',
   'Killer',
-  'Sportiq',
+  'Sparky',
   'Ignite',
   'Jockey',
   'Unibro',

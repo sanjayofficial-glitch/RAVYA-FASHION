@@ -62,7 +62,7 @@ export async function GET() {
 
 export async function POST(req: NextRequest) {
   if (!authorized(req)) {
-    return new NextResponse(null, { status: 404 });
+    return new NextResponse(null, { status: 403 });
   }
 
   let body: { productId?: unknown; status?: unknown };
@@ -89,6 +89,13 @@ export async function POST(req: NextRequest) {
     } else {
       await upstashPipeline([['HSET', 'rf:inventory', product.id, JSON.stringify(entry)]]);
       mode = 'upstash';
+      // Track inventory updates for analytics
+      await fetch(new URL('/api/track', req.url), {
+        method: 'POST',
+        body: JSON.stringify({ event: 'inventory_update', productId: product.id, status: body.status, mode }),
+        headers: { 'Content-Type': 'application/json' },
+        cache: 'no-store',
+      });
     }
   } catch {
     memoryInventory.set(product.id, entry);
